@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import WordFadeIn from "@/components/magicui/word-fade-in"
+import Image from "next/image"
 
 export default function Component() {
   return (
@@ -38,7 +39,7 @@ export default function Component() {
                 </div>
               </div>
               <div className="flex items-center justify-center">
-                <img
+                <Image
                   src="/image.png"
                   width="200"
                   height="200"
