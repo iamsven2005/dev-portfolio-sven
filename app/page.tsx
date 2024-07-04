@@ -41,8 +41,8 @@ export default function Component() {
               <div className="flex items-center justify-center">
                 <Image
                   src="/image.png"
-                  width="200"
-                  height="200"
+                  width="256"
+                  height="346"
                   alt="About Me"
                   className="rounded-lg object-cover shadow-lg"
                 />
