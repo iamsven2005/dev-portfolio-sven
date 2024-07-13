@@ -516,6 +516,24 @@ export default function Component() {
               </Card>
               <Card>
                 <CardHeader>
+                  <CardTitle>CSS Database</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                  Mock html store with CSS as a database with simple search feature.
+                  </p>
+                  <div className="flex items-center gap-2 mt-4">
+                    <Link
+                      href="https://iamsven2005.github.io/Vapacly/cssdatabase.html"
+                      className="btn"
+                    >
+                      Website
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
                   <CardTitle>Base64</CardTitle>
                 </CardHeader>
                 <CardContent>
