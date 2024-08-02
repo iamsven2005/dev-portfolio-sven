@@ -317,6 +317,42 @@ export default function Component() {
                   </div>
                 </CardContent>
               </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Mendel</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                  For my system secuirty project my group decided to do a anon posting website to:
+                  -Verify you are a student
+                  -Search for post / comments
+                  -Like and dislike -post and comments
+                  -Admin moderation platforms
+                  -Api key generation and service
+                  </p>
+                  <div className="flex items-center gap-2 mt-4">
+                  <Link
+                      href="https://github.com/iamsven2005/mendel"
+                      className="btn"
+                    >
+                      Github
+                    </Link>
+                    <Link
+                      href="https://www.instagram.com/p/C-KUwSdpC-f/"
+                      className="btn"
+                    >
+                      Video
+                    </Link>
+                    <Link
+                      href="http://mendel.vercel.app/"
+                      className="btn"
+                    >
+                      Website
+                    </Link>
+                    
+                  </div>
+                </CardContent>
+              </Card>
             </div>
             <p className="font-bold m-5">
               Own Projects
