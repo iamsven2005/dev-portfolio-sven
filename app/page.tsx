@@ -727,6 +727,12 @@ export default function Component() {
               >
                 CodePen
               </Link>
+              <Link
+                href="/blog"
+                className="btn"
+              >
+                Blog
+              </Link>
             </div>
           </div>
         </section>
