@@ -1,6 +1,8 @@
 
 import Link from "next/link"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+
 import WordFadeIn from "@/components/magicui/word-fade-in"
 import Image from "next/image"
 
@@ -21,8 +23,31 @@ export default function Component() {
                   Intrest:
                 </h1>
                 <p>
-                  I love reading, from guidebooks to best practices, I spend me free time delving deep into a better understanding of how to constantly update myself. I also like customizing my Neovim extensions to make myself feel more at home.
+                  I love learning and exploring, whether it be from reading new books or trying out new technologies. I like engaging myself like most people and I would frequently visit discord and reddit to get updates from people like Theo, Primeagen and Kevin Powell.
                 </p>
+                <Accordion type="single" collapsible className="w-full">
+      <AccordionItem value="item-1">
+        <AccordionTrigger>
+                  Traits
+                  </AccordionTrigger>
+                  <AccordionContent>
+                  <b>Strength:</b> My traits as evaluted by CliftonStrengths
+                  <br/> Learner: Strong desire to continuously improve and expand knowledge, likely to take on task that requires new knowledge. 
+                  <br/> Achiever: Highly driven and constant need for achievement, thriving in places where progress is measurable with clear goals.
+                  <br/>
+                  Adapatability: Live in the moment and prefer to go with the current flow and situations as it unfolds.
+                  <br/>
+                  Deliberative: Careful, vigilant and think things through before acting, weighting risk and consider the consequences carefully before making decisions.
+                  <br/> Ideation: Facinated by new ideas and contantly thinking about new  ways to approach things, brainstorming as well as imagining possiblities.
+                  <br/>
+                  <b>
+                    Weakness:
+                  </b>
+                  <br/>
+                  I am not inclined in piortizing for long-term planning or refining of ideas of which is something I need to be conciously be working and keeping in mind of. I also lack the drive to continue a task if the difficuly and flow outweighs implementation of the idea.
+                  </AccordionContent>
+                  </AccordionItem>
+                  </Accordion>
                 <div className="flex flex-wrap gap-5 items-center justify-center mx-auto">
                   <div className="bg-base-200 rounded-lg p-4 text-center">
                     <p className="text-2xl font-bold">3+</p>
@@ -170,21 +195,21 @@ export default function Component() {
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle></CardTitle>
+                  <CardTitle>NTUC</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                  A club as a service project to provide IT support for all clubs
+                  AI approval system for food label processing.
                   </p>
                   <div className="flex items-center gap-2 mt-4">
                     <Link
-                      href="https://github.com/nyp-tech"
+                      href="https://github.com/iamsven2005/FYP"
                       className="btn"
                     >
                       GitHub
                     </Link>
                     <Link
-                      href="http://nyptech.vercel.app/"
+                      href="https://ntuc-workflow.vercel.app/"
                       className="btn"
                     >
                       Website
