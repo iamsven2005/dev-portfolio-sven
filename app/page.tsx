@@ -127,7 +127,7 @@ export default function Component() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    A HR all in one-solution startup made with cross-disciplinary friends.
+                    An all in one event planning and management application.
                   </p>
                   <div className="flex items-center gap-2 mt-4">
                     <Link
@@ -210,6 +210,78 @@ export default function Component() {
                     </Link>
                     <Link
                       href="https://ntuc-workflow.vercel.app/"
+                      className="btn"
+                    >
+                      Website
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Polling App</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                  A realtime voting app for my primary schoom that succesfully handled up to 1000 concurrent connections for a mid-autumn celebration voting activity.
+                  </p>
+                  <div className="flex items-center gap-2 mt-4">
+                    <Link
+                      href="https://github.com/iamsven2005/student-polling"
+                      className="btn"
+                    >
+                      GitHub
+                    </Link>
+                    <Link
+                      href="https://student-polling.vercel.app/"
+                      className="btn"
+                    >
+                      Website
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Polling App</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                  A realtime voting app for my primary schoom that succesfully handled up to 1000 concurrent connections for a mid-autumn celebration voting activity.
+                  </p>
+                  <div className="flex items-center gap-2 mt-4">
+                    <Link
+                      href="https://github.com/iamsven2005/student-polling"
+                      className="btn"
+                    >
+                      GitHub
+                    </Link>
+                    <Link
+                      href="https://student-polling.vercel.app/"
+                      className="btn"
+                    >
+                      Website
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Lost SG</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                  A lost and found app for my local community
+                  </p>
+                  <div className="flex items-center gap-2 mt-4">
+                    <Link
+                      href="https://github.com/iamsven2005/lost-n-found"
+                      className="btn"
+                    >
+                      GitHub
+                    </Link>
+                    <Link
+                      href="https://lost-sg.vercel.app/"
                       className="btn"
                     >
                       Website
@@ -375,6 +447,30 @@ export default function Component() {
                       Website
                     </Link>
                     
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Template Creator</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                  A document creator adopted by NYP to take in a senate paper and a course integrated folder to produce a uni course template.
+                  </p>
+                  <div className="flex items-center gap-2 mt-4">
+                    <Link
+                      href="https://github.com/iamsven2005/course-template-nyp"
+                      className="btn"
+                    >
+                      GitHub
+                    </Link>
+                    <Link
+                      href="https://course-template-nyp.vercel.app/"
+                      className="btn"
+                    >
+                      Website
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -577,6 +673,30 @@ export default function Component() {
               </Card>
               <Card>
                 <CardHeader>
+                  <CardTitle>Spacetraders SvelteKit</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                  My personal SvelteKit app that runs my algorithms for my spacetraders api based gameplay.
+                  </p>
+                  <div className="flex items-center gap-2 mt-4">
+                  <Link
+                      href="https://github.com/iamsven2005/spacetraders-api-gameplay"
+                      className="btn"
+                    >
+                      Github
+                    </Link>
+                    <Link
+                      href="https://spacetraders-api-gameplay.vercel.app/"
+                      className="btn"
+                    >
+                      Website
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
                   <CardTitle>CSS Database</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -611,6 +731,121 @@ export default function Component() {
                   </div>
                 </CardContent>
               </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>SQL frontend</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                  My Experiment of using sql as a frontend framework
+                  </p>
+                  <div className="flex items-center gap-2 mt-4">
+                    <Link
+                      href="https://sql-frontend.vercel.app/"
+                      className="btn"
+                    >
+                      Website
+                    </Link>
+                    <Link
+                      href="https://github.com/iamsven2005/sql-frontend"
+                      className="btn"
+                    >
+                      Github
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Cisco assitant</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                  AI assitant for cisco network commands with file upload capability. Detects code and allows for download of files
+                  </p>
+                  <div className="flex items-center gap-2 mt-4">
+                    <Link
+                      href="https://img-gen-beta.vercel.app/"
+                      className="btn"
+                    >
+                      Website
+                    </Link>
+                    <Link
+                      href="https://yaml-convert.vercel.app/"
+                      className="btn"
+                    >
+                      MVP
+                    </Link>
+                    <Link
+                      href="https://github.com/iamsven2005/img-gen"
+                      className="btn"
+                    >
+                      Github
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Wasm Timer</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                  A wasm timer made on gcc.
+                  </p>
+                  <div className="flex items-center gap-2 mt-4">
+                    <Link
+                      href="https://iamsven2005.github.io/c-timer/"
+                      className="btn"
+                    >
+                      Website
+                    </Link>
+                    <Link
+                      href="https://github.com/iamsven2005/c-timer"
+                      className="btn"
+                    >
+                      Github
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Rust Projects</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                  My projects to practice rust
+                 </p>
+                  <div className="flex items-center gap-2 mt-4 flex-wrap">
+                    <Link
+                      href="https://github.com/iamsven2005/grep-rust"
+                      className="btn"
+                    >
+                     CLI grep
+                    </Link>
+                    <Link
+                      href="https://github.com/iamsven2005/http-rust"
+                      className="btn"
+                    >
+                      Http Server
+                    </Link>
+                    <Link
+                      href="https://github.com/how-to-commit/rosti"
+                      className="btn"
+                    >
+                      Operating System
+                    </Link>
+                    <Link
+                      href="https://github.com/how-to-commit/chip8-emu"
+                      className="btn"
+                    >
+                      Chip 8 emulator
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+              
             </div>
             <p className="font-bold m-5">
               Hackathons
@@ -699,6 +934,54 @@ export default function Component() {
                     </Link>
                     <Link
                       href="https://elderwee.vercel.app/"
+                      className="btn"
+                    >
+                      Website
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>TechJam</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    A generative ui based ecommerce store that changes ui based on data collection.
+                  </p>
+                  <div className="flex items-center gap-2 mt-4">
+                  <Link
+                      href="https://github.com/iamsven2005/techjam"
+                      className="btn"
+                    >
+                      Github
+                    </Link>
+                    <Link
+                      href="https://techjam-sigma.vercel.app/"
+                      className="btn"
+                    >
+                      Website
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>LKYGBP</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    A ai based elaerning platform
+                  </p>
+                  <div className="flex items-center gap-2 mt-4">
+                  <Link
+                      href="https://github.com/iamsven2005/new"
+                      className="btn"
+                    >
+                      Github
+                    </Link>
+                    <Link
+                      href="https://new-flame-five.vercel.app/"
                       className="btn"
                     >
                       Website
