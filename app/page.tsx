@@ -818,6 +818,12 @@ export default function Component() {
                   My projects to practice rust
                  </p>
                   <div className="flex items-center gap-2 mt-4 flex-wrap">
+                  <Link
+                      href="https://notes-68616991485.us-central1.run.app/"
+                      className="btn"
+                    >
+                     Full stack rust notetaking app
+                    </Link>
                     <Link
                       href="https://github.com/iamsven2005/grep-rust"
                       className="btn"
