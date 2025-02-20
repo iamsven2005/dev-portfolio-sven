@@ -1,0 +1,252 @@
+{
+    "industry": [
+
+      {
+        "title": "AGEGRACEFULLY",
+        "description": "A social enterprise delivering advanced eldercare products to enrich the lives of seniors with high-tech, high-quality solutions, built on shopify",
+        "website": "https://agegracefully.sg/"
+      },
+      {
+        "title": "WalkingStickSG",
+        "description": "A website for all your walking stick needs.",
+        "website": "https://walkingsticks.sg/"
+      },
+      {
+        "title": "VIRAGE",
+        "description": "Virage provides comprehensive training and simulation programs to help corporations and employees recognize and prevent vishing scams.",
+        "website": "https://virage.app/"
+      },
+      {
+        "title": "Pronto",
+        "description": "Sometimes comitting to a 3-month job just isn't possible. That's why Pronto empowers you to take up singular shifts at establishments islandwide.",
+        "website": "https://pronto.sg/"
+      },
+      {
+        "title": "BIHANCE",
+        "description": "An all in one event planning and management application.",
+        "github": "https://github.com/iamsven2005/bihance",
+        "website": "https://bihance.vercel.app/"
+      },
+      {
+        "title": "Eduhope",
+        "description": "A non-profit peer-to-peer consult project",
+        "github": "https://github.com/tch1001/EduHopeSG",
+        "website": "https://eduhopesg.wixsite.com/eduhopesg"
+      },
+      {
+        "title": "ICPHH",
+        "description": "A decentralized motoko social and commerce application build over blockchain of ICP, a fully hosted solution.",
+        "website": "https://qpz2j-jyaaa-aaaam-actrq-cai.icp0.io/"
+      },
+      {
+        "title": "Convohearts",
+        "description": "Dating Platform made with Dart and flutter",
+        "website": "https://convohearts.sg"
+      }
+
+    ],
+    "school": [
+        {
+            "title": "NYPTECH",
+            "description": "Incubation hub for NYP",
+            "github": "https://github.com/nyp-tech",
+            "website": "http://nyptech.club/"
+          },
+          {
+            "title": "NTUC",
+            "description": "AI approval system for food label processing.",
+            "github": "https://github.com/iamsven2005/FYP",
+            "website": "https://ntuc-workflow.vercel.app/"
+          },
+          
+      {
+        "title": "Book management",
+        "description": "Flask application to showcase the use or 20 different sorting and search algorithms.",
+        "website": "https://ec-admin-red.vercel.app/",
+        "video": "https://www.instagram.com/p/C2aQBhexqNy/"
+      },
+      {
+        "title": "House Color Picker",
+        "description": "Pick and choose colors for your house and share it with your friends!",
+        "github": "https://github.com/iamsven2005/Vapacly/tree/main/devops",
+        "video": "https://youtu.be/aL2ArW0i29k",
+        "website": "http://d3uudldhs171ka.cloudfront.net/"
+      },
+      {
+        "title": "Social Media App",
+        "description": "Webforms hosted on azure, with custom json based database with failover and index features. A custom hand recognition login feature, as well as basic profile changes like security questions and password management. Drag and drop dashboard for admin to manage social media content. Lazy loading of json based data.",
+        "github": "https://github.com/iamsven2005/SHAPER",
+        "video": "https://www.linkedin.com/feed/update/urn:li:activity:7200171195667800065/",
+        "website": "https://shaping.azurewebsites.net/"
+      },
+      {
+        "title": "AI Car Rental",
+        "description": "Nextjs, openai, pgvector, cal, azure iot hub, azure iot edge, redis, Razor C# mvc, vercel ai sdk, AWS cloudfront, AWS S3. A AI generative ui based chat bot, where users can rent car through a chatbot as well as a normal ecommerce base rental.",
+        "github": "https://github.com/iamsven2005/IOT-Live-Dashboard",
+        "video": "https://www.instagram.com/p/C7b2gFYpAPw/",
+        "website": "http://iot-live-dashboard.vercel.app/"
+      },
+      {
+        "title": "Mendel",
+        "description": "For my system security project my group decided to do an anon posting website to verify students, search for posts/comments, like and dislike posts and comments, with admin moderation platforms and API key generation and service.",
+        "github": "https://github.com/iamsven2005/mendel",
+        "video": "https://www.instagram.com/p/C-KUwSdpC-f/",
+        "website": "http://mendel.vercel.app/"
+      },
+      {
+        "title": "Template Creator",
+        "description": "A document creator adopted by NYP to take in a senate paper and a course integrated folder to produce a uni course template.",
+        "github": "https://github.com/iamsven2005/course-template-nyp",
+        "website": "https://course-template-nyp.vercel.app/"
+      }
+    ],
+    "personal": [
+      {
+        "title": "SHAPER",
+        "description": "Twitch clone with live streaming and AI vector search, e-commerce multitenancy and live collaboration drawing tools.",
+        "github": "https://github.com/iamsven2005/twitchclone",
+        "video": "https://youtu.be/XeWJXU6jcCY",
+        "website": "http://twitchclone-five.vercel.app/"
+      },
+      {
+        "title": "Google Docs Clone",
+        "description": "Simple live collaboration document, with notion style editor.",
+        "github": "https://github.com/iamsven2005/notes-liveblocks",
+        "website": "https://notes-liveblocks.vercel.app/"
+      },
+      {
+        "title": "E-commerce App",
+        "description": "A simple ecommerce app made with TI-DB with category search and sorting, as well editing reviews",
+        "github": "https://github.com/iamsven2005/tidb-cloud-starter",
+        "website": "http://tidb-cloud-starter-one-lac.vercel.app/"
+      },
+      {
+        "title": "Notion",
+        "description": "Notion style ai suggestion and note taking app, stored in memory.",
+        "github": "https://github.com/iamsven2005/notetaker",
+        "website": "https://notetaker-tan-chi.vercel.app/"
+      },
+      {
+        "title": "SHOE",
+        "description": "A shoe website for a networking based CTF challenge over wireshark",
+        "github": "https://github.com/iamsven2005/ctfshoe/deployments/github-pages"
+      },
+      {
+        "title": "RPI3",
+        "description": "Server room monitoring system with AI server and security monitoring for winforms",
+        "github": "https://github.com/iamsven2005/IOT_Project"
+      },
+      {
+        "title": "Personal Blog",
+        "description": "Nextjs Page Router project rendered with mdx files.",
+        "website": "https://blog-starter-kit-alpha-seven.vercel.app/"
+      },
+      {
+        "title": "Cornerguys",
+        "description": "A fitness Corner Rating Venture, to rate and post review of fitness corners all over singapore.",
+        "website": "https://cornerguys05.wixsite.com/hello"
+      },
+      {
+        "title": "Pure CSS",
+        "description": "Styling a website with only a html style tag.",
+        "website": "https://iamsven2005.github.io/Vapacly/pure.css.html"
+      },
+      {
+        "title": "Spacetraders SvelteKit",
+        "description": "My personal SvelteKit app that runs my algorithms for my spacetraders api based gameplay.",
+        "github": "https://github.com/iamsven2005/spacetraders-api-gameplay",
+        "website": "https://spacetraders-api-gameplay.vercel.app/"
+      },
+      {
+        "title": "CSS Database",
+        "description": "Mock html store with CSS as a database with simple search feature.",
+        "website": "https://iamsven2005.github.io/Vapacly/cssdatabase.html"
+      },
+      {
+        "title": "Base64",
+        "description": "A pure base64 website",
+        "website": "https://iamsven2005.github.io/Vapacly/base64.html"
+      },
+      {
+        "title": "SQL frontend",
+        "description": "My Experiment of using sql as a frontend framework",
+        "website": "https://sql-frontend.vercel.app/",
+        "github": "https://github.com/iamsven2005/sql-frontend"
+      },
+      {
+        "title": "Cisco assistant",
+        "description": "AI assistant for cisco network commands with file upload capability. Detects code and allows for download of files",
+        "website": "https://img-gen-beta.vercel.app/",
+        "github": "https://github.com/iamsven2005/img-gen"
+      },
+      {
+        "title": "Wasm Timer",
+        "description": "A wasm timer made on gcc.",
+        "website": "https://iamsven2005.github.io/c-timer/",
+        "github": "https://github.com/iamsven2005/c-timer"
+      },
+      {
+        "title": "Rust Projects",
+        "description": "My projects to practice rust",
+        "links": [
+          {
+            "name": "Full stack rust notetaking app",
+            "url": "https://notes-68616991485.us-central1.run.app/"
+          },
+          {
+            "name": "CLI grep",
+            "url": "https://github.com/iamsven2005/grep-rust"
+          },
+          {
+            "name": "Http Server",
+            "url": "https://github.com/iamsven2005/http-rust"
+          },
+          {
+            "name": "Operating System",
+            "url": "https://github.com/how-to-commit/rosti"
+          },
+          {
+            "name": "Chip 8 emulator",
+            "url": "https://github.com/how-to-commit/chip8-emu"
+          }
+        ]
+      }
+    ],
+    "hackathons": [
+      {
+        "title": "CodeOverflow",
+        "description": "Diet chatbot that comes out with carbon-friendly recipes",
+        "github": "https://github.com/iamsven2005/2022hackathon",
+        "video": "https://youtu.be/pH5oaVREKG8?si=eyZW9f1A6ALC5vqI",
+        "website": "https://iamsven2005.github.io/2022hackathon/"
+      },
+      {
+        "title": "LKYSPP",
+        "description": "An AI interior designer through 360 videos.",
+        "github": "https://github.com/iamsven2005/2022hackathon",
+        "video": "https://youtu.be/pH5oaVREKG8?si=eyZW9f1A6ALC5vqI",
+        "website": "https://iamsven2005.github.io/LKY_project/index.html"
+      },
+      {
+        "title": "Paypal Polyfintech",
+        "description": "A DMZ based deepfake verifier for scam prevention in bank transactions",
+        "github": "https://github.com/iamsven2005/ElderWee",
+        "video": "https://www.instagram.com/p/C88Fii-JO3p/",
+        "website": "https://elderwee.vercel.app/"
+      },
+      {
+        "title": "TechJam",
+        "description": "A generative ui based ecommerce store that changes ui based on data collection.",
+        "github": "https://github.com/iamsven2005/techjam",
+        "website": "https://techjam-sigma.vercel.app/"
+      },
+      {
+        "title": "LKYGBP",
+        "description": "An AI based e-learning platform",
+        "github": "https://github.com/iamsven2005/new",
+        "website": "https://new-flame-five.vercel.app/"
+      }
+    ]
+  }
+  
+  
