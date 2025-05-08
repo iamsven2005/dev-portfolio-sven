@@ -22,10 +22,16 @@
         "website": "https://pronto.sg/"
       },
       {
-        "title": "BIHANCE",
+        "title": "BIHANCE-events",
         "description": "An all in one event planning and management application.",
         "github": "https://github.com/iamsven2005/bihance",
-        "website": "https://bihance.vercel.app/"
+        "website": "https://events.bihance.app/"
+      },
+      {
+        "title": "BIHANCE-jobs",
+        "description": "Tinder but for jobs",
+        "github": "https://github.com/iamsven2005/bihance-ticketing",
+        "website": "https://bihance.sg/"
       },
       {
         "title": "Eduhope",
@@ -107,6 +113,13 @@
         "github": "https://github.com/iamsven2005/twitchclone",
         "video": "https://youtu.be/XeWJXU6jcCY",
         "website": "http://twitchclone-five.vercel.app/"
+      },
+      {
+        "title": "SSnake",
+        "description": "A multiplayer realtime snake game ran with socketio",
+        "github": "https://github.com/iamsven2005/slitherio",
+        "video": "https://www.instagram.com/p/DJYFAqDzHLP/",
+        "website": "https://slitherio-cyan.vercel.app/"
       },
       {
         "title": "Google Docs Clone",
