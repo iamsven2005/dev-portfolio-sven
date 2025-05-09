@@ -3,16 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "email": "email dev",
     "build": "next build",
-    "gen-dev": "prisma migrate dev",
-    "g": "prisma generate",
-    "m": "prisma migrate deploy",
-    "p": "prisma db push",
-    "S": "prisma studio",
-    "d": "next dev",
-    "pull": "prisma db pull",
-    "postinstall": "prisma generate",
     "lint": "next lint",
     "start": "next start"
   },
