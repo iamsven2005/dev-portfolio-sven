@@ -64,7 +64,13 @@
             "github": "https://github.com/iamsven2005/FYP",
             "website": "https://ntuc-workflow.vercel.app/"
           },
-          
+          {
+            "title": "KAKIS",
+            "description": "Student-run food ordering system for personal branding project",
+            "github": "https://github.com/iamsven2005/kakis",
+            "website": "https://kakis.bihance.app/",
+            "video": "https://www.instagram.com/p/DMEr4GJTy0O/"
+          },
       {
         "title": "Book management",
         "description": "Flask application to showcase the use or 20 different sorting and search algorithms.",
