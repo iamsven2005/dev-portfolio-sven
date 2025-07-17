@@ -9,6 +9,7 @@ import WordFadeIn from "@/components/magicui/word-fade-in"
 import Image from "next/image"
 import projectData from "./projectData.json"
 import { ProjectCard } from "@/components/ProjectCard"
+import Jobs from "./list"
 
 export default function Portfolio() {
   const [projects, setProjects] = useState(projectData)
@@ -100,7 +101,7 @@ export default function Portfolio() {
             </div>
           </div>
         </section>
-
+        <Jobs/>
         <section id="projects" className="py-12 md:py-16 lg:py-20 bg-muted">
           <div className="container px-4 md:px-6 lg:px-8">
             <div className="space-y-4 mb-8">
