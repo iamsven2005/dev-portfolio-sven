@@ -78,18 +78,10 @@
         "video": "https://www.instagram.com/p/C2aQBhexqNy/"
       },
       {
-        "title": "House Color Picker",
-        "description": "Pick and choose colors for your house and share it with your friends!",
-        "github": "https://github.com/iamsven2005/Vapacly/tree/main/devops",
-        "video": "https://youtu.be/aL2ArW0i29k",
-        "website": "http://d3uudldhs171ka.cloudfront.net/"
-      },
-      {
         "title": "Social Media App",
         "description": "Webforms hosted on azure, with custom json based database with failover and index features. A custom hand recognition login feature, as well as basic profile changes like security questions and password management. Drag and drop dashboard for admin to manage social media content. Lazy loading of json based data.",
         "github": "https://github.com/iamsven2005/SHAPER",
         "video": "https://www.linkedin.com/feed/update/urn:li:activity:7200171195667800065/",
-        "website": "https://shaping.azurewebsites.net/"
       },
       {
         "title": "AI Car Rental",
@@ -134,31 +126,15 @@
         "website": "https://notes-liveblocks.vercel.app/"
       },
       {
-        "title": "E-commerce App",
-        "description": "A simple ecommerce app made with TI-DB with category search and sorting, as well editing reviews",
-        "github": "https://github.com/iamsven2005/tidb-cloud-starter",
-        "website": "http://tidb-cloud-starter-one-lac.vercel.app/"
-      },
-      {
         "title": "Notion",
         "description": "Notion style ai suggestion and note taking app, stored in memory.",
         "github": "https://github.com/iamsven2005/notetaker",
         "website": "https://notetaker-tan-chi.vercel.app/"
       },
       {
-        "title": "SHOE",
-        "description": "A shoe website for a networking based CTF challenge over wireshark",
-        "github": "https://github.com/iamsven2005/ctfshoe/deployments/github-pages"
-      },
-      {
         "title": "RPI3",
         "description": "Server room monitoring system with AI server and security monitoring for winforms",
         "github": "https://github.com/iamsven2005/IOT_Project"
-      },
-      {
-        "title": "Personal Blog",
-        "description": "Nextjs Page Router project rendered with mdx files.",
-        "website": "https://blog-starter-kit-alpha-seven.vercel.app/"
       },
       {
         "title": "Cornerguys",
@@ -180,11 +156,6 @@
         "title": "CSS Database",
         "description": "Mock html store with CSS as a database with simple search feature.",
         "website": "https://iamsven2005.github.io/Vapacly/cssdatabase.html"
-      },
-      {
-        "title": "Base64",
-        "description": "A pure base64 website",
-        "website": "https://iamsven2005.github.io/Vapacly/base64.html"
       },
       {
         "title": "SQL frontend",
