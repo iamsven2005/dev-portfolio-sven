@@ -81,7 +81,7 @@
         "title": "Social Media App",
         "description": "Webforms hosted on azure, with custom json based database with failover and index features. A custom hand recognition login feature, as well as basic profile changes like security questions and password management. Drag and drop dashboard for admin to manage social media content. Lazy loading of json based data.",
         "github": "https://github.com/iamsven2005/SHAPER",
-        "video": "https://www.linkedin.com/feed/update/urn:li:activity:7200171195667800065/",
+        "video": "https://www.linkedin.com/feed/update/urn:li:activity:7200171195667800065/"
       },
       {
         "title": "AI Car Rental",
