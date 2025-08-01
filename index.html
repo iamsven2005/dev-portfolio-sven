@@ -2,32 +2,64 @@
   id="passwordInput"
   type="text"
   placeholder="Enter your password"
-  style="text-align: center;height: 100vh; width:100vw; font-size:large;"
+  style="text-align: center; height: 100vh; width: 100vw; font-size: 5vw; box-sizing: border-box; overflow: hidden; border: none; outline: none;"
 >
 
 <script>
+  // Disable left click
+  document.addEventListener('mousedown', function(event) {
+    if (event.button === 0) {
+      event.preventDefault();
+      event.stopPropagation();
+      console.log("Left click disabled");
+      return false;
+    }
+  });
+
+  // Disable right-click
+  document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+    console.log("Right click disabled");
+  });
+
   const input = document.getElementById('passwordInput');
+  let firstFail = false;
 
-  input.addEventListener('keydown', async function (event) {
+  // Apply stored placeholder from localStorage
+  const last = localStorage.getItem('lastResponse');
+  if (last) {
+    input.placeholder = last;
+    console.log("Loaded from localStorage:", last);
+  }
+
+  input.focus();
+
+  input.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
-      const password = input.value;
+      const value = input.value.trim().toLowerCase();
 
-      try {
-        const res = await fetch('https://sven.bihance.sg/api/validate-password', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ password })
-        });
-
-        const data = await res.json();
-
+      if (!firstFail) {
         input.value = '';
-        input.placeholder = data.message || 'Error';
-      } catch (error) {
-        input.value = '';
-        input.placeholder = 'Server error';
+        input.placeholder = 'Wrong password, try again';
+        localStorage.setItem('lastResponse', 'Back so soon?');
+        firstFail = true;
+      } else {
+        if (value === 'again') {
+          localStorage.setItem('lastResponse', "STOP");
+          input.value = '';
+          input.disabled = true;
+          input.placeholder = 'haha. real funny, stop it';
+        } else if(value === 'incorrect'){
+          localStorage.setItem('lastResponse', "What brings you here?");
+          input.value = '';
+          input.disabled = true;
+          input.placeholder = 'OH YOU THNK YOU REAL SLICK';
+        }
+        else {
+          localStorage.setItem('lastResponse', input.value);
+          input.value = '';
+          input.placeholder = 'your password is incorrect';
+        }
       }
     }
   });
