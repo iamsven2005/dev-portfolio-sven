@@ -1,18 +1,20 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { password } = req.body;
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
 
-  if (!password || typeof password !== 'string') {
-    return res.status(400).json({ message: 'Invalid input' });
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end()
   }
 
-  // Replace this logic with your own password check
-  const correctPassword = 'secret123';
+  const { password } = req.body
 
+  const correctPassword = 'secret123'
   if (password === correctPassword) {
-    res.status(200).json({ message: 'Access granted' });
+    return res.status(200).json({ message: 'Access granted' })
   } else {
-    res.status(401).json({ message: 'Wrong password' });
+    return res.status(401).json({ message: 'Wrong password' })
   }
 }
