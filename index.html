@@ -1,0 +1,34 @@
+<input
+  id="passwordInput"
+  type="text"
+  placeholder="Enter your password"
+  style="text-align: center;height: 100vh; width:100vw; font-size:large;"
+>
+
+<script>
+  const input = document.getElementById('passwordInput');
+
+  input.addEventListener('keydown', async function (event) {
+    if (event.key === 'Enter') {
+      const password = input.value;
+
+      try {
+        const res = await fetch('https://sven.bihance.app/api/validate-password', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ password })
+        });
+
+        const data = await res.json();
+
+        input.value = '';
+        input.placeholder = data.message || 'Error';
+      } catch (error) {
+        input.value = '';
+        input.placeholder = 'Server error';
+      }
+    }
+  });
+</script>
