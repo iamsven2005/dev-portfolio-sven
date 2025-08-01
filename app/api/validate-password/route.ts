@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { OpenAI } from 'openai'
-
+import OpenAI from 'openai' // Correct for v4 SDK
+zxcz
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 })
