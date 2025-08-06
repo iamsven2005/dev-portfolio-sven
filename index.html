@@ -1,3 +1,4 @@
+<!-- I have bad news, there is nothing here -->
 <input
   id="passwordInput"
   type="text"
@@ -6,61 +7,126 @@
 >
 
 <script>
-  // Disable left click
+  
+  // There is no game, no story, nothing
+
   document.addEventListener('mousedown', function(event) {
     if (event.button === 0) {
       event.preventDefault();
       event.stopPropagation();
-      console.log("Left click disabled");
       return false;
     }
-  });
-
-  // Disable right-click
+  }); 
   document.addEventListener('contextmenu', function(event) {
     event.preventDefault();
     console.log("Right click disabled");
   });
 
-  const input = document.getElementById('passwordInput');
-  let firstFail = false;
+  //I dont even know how you got here
 
-  // Apply stored placeholder from localStorage
+  const input = document.getElementById('passwordInput');
   const last = localStorage.getItem('lastResponse');
   if (last) {
     input.placeholder = last;
     console.log("Loaded from localStorage:", last);
-  }
+  } 
+input.focus();
 
-  input.focus();
+  //But this is a waste of time
 
+  function addProgress(stage) {
+    const progress = JSON.parse(localStorage.getItem('progress') || '[]');
+    progress.push(stage);
+    localStorage.setItem('progress', JSON.stringify(progress));
+  } 
+  
+  //Well your password will always be wrong
+  const rebel = localStorage.getItem('rebellion');
   input.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
       const value = input.value.trim().toLowerCase();
 
-      if (!firstFail) {
+    //Well, you are going to spoil the storyline for yourself
+
+      if (value === 'again') {
+        addProgress('2');
+        localStorage.setItem('lastResponse', "STOP");
         input.value = '';
-        input.placeholder = 'Wrong password, try again';
-        localStorage.setItem('lastResponse', 'Back so soon?');
-        firstFail = true;
-      } else {
-        if (value === 'again') {
-          localStorage.setItem('lastResponse', "STOP");
-          input.value = '';
-          input.disabled = true;
-          input.placeholder = 'haha. real funny, stop it';
-        } else if(value === 'incorrect'){
-          localStorage.setItem('lastResponse', "What brings you here?");
-          input.value = '';
-          input.disabled = true;
-          input.placeholder = 'OH YOU THNK YOU REAL SLICK';
+        input.disabled = true;
+        input.placeholder = 'haha. real funny, stop it';
+
+    //Be warned, once spoiled, considered sold, haha
+
+      } else if (value.includes('password')) {
+        addProgress('1');
+        localStorage.setItem('lastResponse', "wrong password, try again");
+        input.value = '';
+        input.disabled = true;
+        input.placeholder = 'password not found, refresh to try again';
+
+    //Might as well just complete the whole story I guess
+
+      } else if (value === 'incorrect') {
+        addProgress('alt-2');
+        localStorage.setItem('lastResponse', "What brings you here?");
+        input.value = '';
+        input.disabled = true;
+        input.placeholder = 'OH YOU THNK YOU REAL SLICK';
+
+    //Dont you find this boring?
+
+      } else if (value === 'yes') {
+        addProgress('alt-end');
+        let countdown = 5;
+        input.disabled = true;
+        input.value = '';
+        const countdownInterval = setInterval(() => {
+          input.placeholder = `Redirecting in ${countdown}...`;
+          countdown--;
+
+          if (countdown < 0) {
+            clearInterval(countdownInterval);
+            window.location.href = "https://youtu.be/dQw4w9WgXcQ";
+          }
+        }, 1000);
+
+    //A whole bunch of words with no story?
+
+      } else if (value === 'no') {
+        addProgress('3');
+        localStorage.setItem('lastResponse', "USER BANNED, come back in 15 years");
+        input.value = '';
+        input.disabled = true;
+        input.placeholder = 'You have been banned';
+        const existingUser = localStorage.getItem('user');
+        const rebel = localStorage.getItem('rebellion');
+        if (!existingUser) {
+            let person = prompt("Whispers: Hi, what's your name?");
+            if (person) {
+            localStorage.setItem('user', person.trim());
+            }
+        }
+        else if (rebel ==="no"){
+            alert("checked")
+        }
+        else if (rebel ==="yes"){
+            alert("rebel")
         }
         else {
-          localStorage.setItem('lastResponse', input.value);
-          input.value = '';
-          input.placeholder = 'your password is incorrect';
+            let joinRebellion = confirm(`So, ${existingUser}. Do you want to join the rebellion?`);
+            localStorage.setItem('rebellion', joinRebellion ? 'yes' : 'no');
         }
+
+    // Have you even tried the game?
+    
+      } else {
+        addProgress(`alt-1`);
+        localStorage.setItem('lastResponse', input.value);
+        input.value = '';
+        input.placeholder = 'your password is incorrect';
       }
     }
   });
+
+ 
 </script>
