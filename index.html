@@ -5,6 +5,7 @@
   placeholder="Enter your password"
   style="text-align: center; height: 100vh; width: 100vw; font-size: 5vw; box-sizing: border-box; overflow: hidden; border: none; outline: none;"
 >
+<div id="updatesTable" style="display: none; padding: 2rem; font-size: 1.5rem;"></div>
 
 <script>
   
@@ -25,6 +26,8 @@
   //I dont even know how you got here
 
   const input = document.getElementById('passwordInput');
+    const updatesDiv = document.getElementById('updatesTable');
+
   const last = localStorage.getItem('lastResponse');
   if (last) {
     input.placeholder = last;
@@ -34,11 +37,15 @@ input.focus();
 
   //But this is a waste of time
 
-  function addProgress(stage) {
-    const progress = JSON.parse(localStorage.getItem('progress') || '[]');
+function addProgress(stage) {
+  const progress = JSON.parse(localStorage.getItem('progress') || '[]');
+
+  if (!progress.includes(stage)) {
     progress.push(stage);
     localStorage.setItem('progress', JSON.stringify(progress));
-  } 
+  }
+}
+
   
   //Well your password will always be wrong
   const rebel = localStorage.getItem('rebellion');
@@ -119,7 +126,69 @@ input.focus();
 
     // Have you even tried the game?
     
-      } else {
+      } 
+      else if (value === '/updates') {
+        addProgress('tool-1');
+        input.style.display = 'none';
+        updatesDiv.style.display = 'block';
+
+        updatesDiv.innerHTML = `
+          <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+              <tr><th>Version</th><th>Date</th><th>Changes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>v1.0</td><td>2025-08-01</td><td>Launched password puzzle</td></tr>
+              <tr><td>v1.1</td><td>2025-08-06</td><td>Added rebellion storyline</td></tr>
+            </tbody>
+          </table>
+        `;
+        return;
+      }
+      else if (value === '/help') {
+        addProgress('tool-2');
+        input.style.display = 'none';
+        updatesDiv.style.display = 'block';
+
+        updatesDiv.innerHTML = `
+          <table border="1" cellpadding="10" cellspacing="0">
+            <thead>
+              <tr><th>Command</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>/help</td><td>Shows a list of commands</td></tr>
+              <tr><td>/updates</td><td>Shows table of patch notes</td></tr>
+              <tr><td>/progress</td><td>Shows current user progress</td></tr>
+            </tbody>
+          </table>
+        `;
+        return;
+      }
+      else if (value === '/progress') {
+  addProgress('tool-3');
+  input.style.display = 'none';
+  updatesDiv.style.display = 'block';
+
+  const progressList = JSON.parse(localStorage.getItem('progress') || '[]');
+
+  let rows = progressList.map((item, index) => {
+    return `<tr><td>Step ${index + 1}</td><td>${item}</td></tr>`;
+  }).join('');
+
+  updatesDiv.innerHTML = `
+    <table border="1" cellpadding="10" cellspacing="0">
+      <thead>
+        <tr><th>Step</th><th>Progress Marker</th></tr>
+      </thead>
+      <tbody>
+        ${rows || '<tr><td colspan="2">No progress recorded yet.</td></tr>'}
+      </tbody>
+    </table>
+  `;
+  return;
+}
+
+      else {
         addProgress(`alt-1`);
         localStorage.setItem('lastResponse', input.value);
         input.value = '';
