@@ -1,89 +1,95 @@
 <!-- I have bad news, there is nothing here -->
-<input
-  id="passwordInput"
-  type="text"
-  placeholder="Enter your password"
-  style="text-align: center; height: 100vh; width: 100vw; font-size: 5vw; box-sizing: border-box; overflow: hidden; border: none; outline: none;"
->
-<div id="updatesTable" style="display: none; padding: 2rem; font-size: 1.5rem;"></div>
+<input id="pI" type="text" placeholder="Enter your password"
+  style="text-align: center; height: 100vh; width: 100vw; font-size: 5vw; box-sizing: border-box; overflow: hidden; border: none; outline: none;">
+<div id="uT"></div>
+<style>
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
 
+  .col {
+    display: flex;
+    flex-direction: column;
+  }
+</style>
 <script>
-  
-  // There is no game, no story, nothing
 
-  document.addEventListener('mousedown', function(event) {
+  /*There is no game, no story, nothing*/
+
+  document.addEventListener('mousedown', function (event) {
     if (event.button === 0) {
       event.preventDefault();
       event.stopPropagation();
       return false;
     }
-  }); 
-  document.addEventListener('contextmenu', function(event) {
+  });
+  document.addEventListener('contextmenu', function (event) {
     event.preventDefault();
     console.log("Right click disabled");
   });
 
-  //I dont even know how you got here
+  /*I dont even know how you got here*/
 
-  const input = document.getElementById('passwordInput');
-    const updatesDiv = document.getElementById('updatesTable');
+  const input = document.getElementById('pI');
+  const updatesDiv = document.getElementById('uT');
 
   const last = localStorage.getItem('lastResponse');
   if (last) {
     input.placeholder = last;
     console.log("Loaded from localStorage:", last);
-  } 
-input.focus();
-
-  //But this is a waste of time
-
-function addProgress(stage) {
-  const progress = JSON.parse(localStorage.getItem('progress') || '[]');
-
-  if (!progress.includes(stage)) {
-    progress.push(stage);
-    localStorage.setItem('progress', JSON.stringify(progress));
   }
-}
+  input.focus();
 
-  
-  //Well your password will always be wrong
+  /*But this is a waste of time*/
+
+  function aP(stage) {
+    const progress = JSON.parse(localStorage.getItem('progress') || '[]');
+
+    if (!progress.includes(stage)) {
+      progress.push(stage);
+      localStorage.setItem('progress', JSON.stringify(progress));
+    }
+  }
+
+
+  /*Well your password will always be wrong*/
   const rebel = localStorage.getItem('rebellion');
   input.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
       const value = input.value.trim().toLowerCase();
 
-    //Well, you are going to spoil the storyline for yourself
+      /*Well, you are going to spoil the storyline for yourself*/
 
       if (value === 'again') {
-        addProgress('2');
+        aP('main-2');
         localStorage.setItem('lastResponse', "STOP");
         input.value = '';
         input.disabled = true;
         input.placeholder = 'haha. real funny, stop it';
 
-    //Be warned, once spoiled, considered sold, haha
+        /*Be warned, once spoiled, considered sold, haha*/
 
       } else if (value.includes('password')) {
-        addProgress('1');
+        aP('main-1');
         localStorage.setItem('lastResponse', "wrong password, try again");
         input.value = '';
         input.disabled = true;
         input.placeholder = 'password not found, refresh to try again';
 
-    //Might as well just complete the whole story I guess
+        /*Might as well just complete the whole story I guess*/
 
       } else if (value === 'incorrect') {
-        addProgress('alt-2');
+        aP('alt-2');
         localStorage.setItem('lastResponse', "What brings you here?");
         input.value = '';
         input.disabled = true;
         input.placeholder = 'OH YOU THNK YOU REAL SLICK';
 
-    //Dont you find this boring?
+        /*Dont you find this boring?*/
 
       } else if (value === 'yes') {
-        addProgress('alt-end');
+        aP('alt-end');
         let countdown = 5;
         input.disabled = true;
         input.value = '';
@@ -97,10 +103,10 @@ function addProgress(stage) {
           }
         }, 1000);
 
-    //A whole bunch of words with no story?
+        /*A whole bunch of words with no story?*/
 
       } else if (value === 'no') {
-        addProgress('3');
+        aP('main-3');
         localStorage.setItem('lastResponse', "USER BANNED, come back in 15 years");
         input.value = '';
         input.disabled = true;
@@ -108,88 +114,114 @@ function addProgress(stage) {
         const existingUser = localStorage.getItem('user');
         const rebel = localStorage.getItem('rebellion');
         if (!existingUser) {
-            let person = prompt("Whispers: Hi, what's your name?");
-            if (person) {
+          let person = prompt("Whispers: Hi, what's your name?");
+          if (person) {
             localStorage.setItem('user', person.trim());
-            }
+          }
         }
-        else if (rebel ==="no"){
-            alert("checked")
+        else if (rebel === "no") {
+          aP('main-4');
+          let joinRebellion = confirm(`Welcome back ${existingUser}, have a change in mind?`);
+          localStorage.setItem('rebellion', joinRebellion ? 'yes' : 'no');
+          if (joinRebellion) {alert("This is where the rebellion resides, just reply no from now on to come back.");}
+          else {alert("Come back when you are ready.")}
         }
-        else if (rebel ==="yes"){
-            alert("rebel")
+        else if (rebel === "yes") {
+          aP('main-5');
+          alert("rebel")
         }
         else {
-            let joinRebellion = confirm(`So, ${existingUser}. Do you want to join the rebellion?`);
-            localStorage.setItem('rebellion', joinRebellion ? 'yes' : 'no');
+          let joinRebellion = confirm(`So, ${existingUser}. Do you want to join the rebellion?`);
+          localStorage.setItem('rebellion', joinRebellion ? 'yes' : 'no');
+          if (joinRebellion) {alert("This is where the rebellion resides, just reply no from now on to come back.");}
+          else {alert("Pretend this never happened.")}
         }
 
-    // Have you even tried the game?
-    
-      } 
+        /*Have you even tried the game?*/
+
+      }
       else if (value === '/updates') {
-        addProgress('tool-1');
+        aP('tool-1');
         input.style.display = 'none';
         updatesDiv.style.display = 'block';
-
         updatesDiv.innerHTML = `
-          <table border="1" cellpadding="10" cellspacing="0">
-            <thead>
-              <tr><th>Version</th><th>Date</th><th>Changes</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>v1.0</td><td>2025-08-01</td><td>Launched password puzzle</td></tr>
-              <tr><td>v1.1</td><td>2025-08-06</td><td>Added rebellion storyline</td></tr>
-            </tbody>
-          </table>
+          <div class="col">
+            <h1>v1.0
+            <p>2025-08-01
+            <p>Started Game
+              <h1>v1.1
+                <p>2025-08-06
+                <p>Added rebellion storyline
+                </div>
         `;
         return;
       }
+
+      /*Look, the rebellion has taken over*/
+
       else if (value === '/help') {
-        addProgress('tool-2');
+        aP('tool-2');
         input.style.display = 'none';
         updatesDiv.style.display = 'block';
-
         updatesDiv.innerHTML = `
-          <table border="1" cellpadding="10" cellspacing="0">
-            <thead>
-              <tr><th>Command</th><th>Description</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>/help</td><td>Shows a list of commands</td></tr>
-              <tr><td>/updates</td><td>Shows table of patch notes</td></tr>
-              <tr><td>/progress</td><td>Shows current user progress</td></tr>
-            </tbody>
-          </table>
+          <div class="col">
+            <p>Use /help for list of commands
+            <p>Use /progress to track progress
+            <p>Use /updates to check for storyline updates
+            </div>
         `;
         return;
-      }
+      }/*And the password generator is destroyed*/
       else if (value === '/progress') {
-  addProgress('tool-3');
-  input.style.display = 'none';
-  updatesDiv.style.display = 'block';
+        aP('tool-3');
+        input.style.display = 'none';
+        updatesDiv.style.display = 'block';
+        const progressList = JSON.parse(localStorage.getItem('progress') || '[]');
+        const grouped = {
+          main: [],
+          alt: [],
+          tool: [],
+          other: []
+        };
 
-  const progressList = JSON.parse(localStorage.getItem('progress') || '[]');
+/*You have gotten the root, hash and kept password manager in a vault*/
 
-  let rows = progressList.map((item, index) => {
-    return `<tr><td>Step ${index + 1}</td><td>${item}</td></tr>`;
-  }).join('');
+        progressList.forEach((item) => {
+          if (item.startsWith('main-')) grouped.main.push(item);
+          else if (item.startsWith('alt-')) grouped.alt.push(item);
+          else if (item.startsWith('tool-')) grouped.tool.push(item);
+          else grouped.other.push(item);
+        });
 
-  updatesDiv.innerHTML = `
-    <table border="1" cellpadding="10" cellspacing="0">
-      <thead>
-        <tr><th>Step</th><th>Progress Marker</th></tr>
-      </thead>
-      <tbody>
-        ${rows || '<tr><td colspan="2">No progress recorded yet.</td></tr>'}
-      </tbody>
-    </table>
+
+        const makeTable = (title, items) => {
+          if (!items.length) return '';
+          const rows = items.map((step, i) => `<tr><td>Step ${i + 1}</td><td>${step}</td></tr>`).join('');
+          return `
+      <h2>${title}</h2>
+      <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+          <tr><th>Step</th><th>Progress Marker</th></tr>
+        </thead>
+        <tbody>
+          ${rows}
+        </tbody>
+      </table>
+    `;
+        };
+
+        updatesDiv.innerHTML = `
+    ${makeTable('Main Progress', grouped.main)}
+    ${makeTable('Alternate Paths', grouped.alt)}
+    ${makeTable('Tools Used', grouped.tool)}
+    ${makeTable('Other', grouped.other)}
   `;
-  return;
-}
+        return;
+      }
+
 
       else {
-        addProgress(`alt-1`);
+        aP(`alt-1`);
         localStorage.setItem('lastResponse', input.value);
         input.value = '';
         input.placeholder = 'your password is incorrect';
@@ -197,5 +229,5 @@ function addProgress(stage) {
     }
   });
 
- 
+
 </script>
