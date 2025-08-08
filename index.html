@@ -2,6 +2,13 @@
 <input id="pI" type="text" placeholder="Enter your password"
   style="text-align: center; height: 100vh; width: 100vw; font-size: 5vw; box-sizing: border-box; overflow: hidden; border: none; outline: none;">
 <div id="uT"></div>
+<div id="bx"></div>
+<div id="modal">
+  <div id="modalContent">
+    <span id="closeBtn">&times;</span>
+    <p>Welcome to the rebellion vault.</p>
+  </div>
+</div>
 <style>
   .row {
     display: flex;
@@ -12,6 +19,87 @@
     display: flex;
     flex-direction: column;
   }
+
+    #bx {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background-color: #00bcd4;
+    border-radius: 20px;
+    opacity: 0;
+    z-index: 999;
+  }
+
+  #bx.show {
+    animation: dropBounce 2s ease-out forwards;
+    opacity: 1;
+  }
+
+  @keyframes dropBounce {
+    0% {
+      top: -100px;
+      opacity: 0;
+    }
+    20% {
+      top: 60vh;
+      opacity: 1;
+    }
+    40% {
+      top: 90vh;
+    }
+    60% {
+      top: 82vh;
+    }
+    75% {
+      top: 90vh;
+    }
+    87% {
+      top: 86vh;
+    }
+    100% {
+      top: 90vh;
+    }
+  }
+  #modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+}
+
+#modalContent {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px 30px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.4s ease;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 </style>
 <script>
 
@@ -31,30 +119,50 @@
 
   /*I dont even know how you got here*/
 
-  const input = document.getElementById('pI');
-  const updatesDiv = document.getElementById('uT');
+  const input = g('pI');
+  const updatesDiv = g('uT');
 
-  const last = localStorage.getItem('lastResponse');
+  const last = gs('R');
   if (last) {
     input.placeholder = last;
-    console.log("Loaded from localStorage:", last);
+  }
+const bx = g('bx');
+const modal = g('modal');
+const closeBtn = g('closeBtn');
+
+bx.addEventListener('click', () => {
+  modal.style.display = 'block';
+  a('t4')
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+  if (bx) {
+    bx.classList.add('show');
   }
   input.focus();
 
   /*But this is a waste of time*/
 
-  function aP(stage) {
-    const progress = JSON.parse(localStorage.getItem('progress') || '[]');
+  function a(stage) {
+    const progress = JSON.parse(gs('progress') || '[]');
 
     if (!progress.includes(stage)) {
       progress.push(stage);
-      localStorage.setItem('progress', JSON.stringify(progress));
+      l('progress', JSON.stringify(progress));
     }
   }
 
 
   /*Well your password will always be wrong*/
-  const rebel = localStorage.getItem('rebellion');
+  const rebel = gs('force');
   input.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
       const value = input.value.trim().toLowerCase();
@@ -62,34 +170,28 @@
       /*Well, you are going to spoil the storyline for yourself*/
 
       if (value === 'again') {
-        aP('main-2');
-        localStorage.setItem('lastResponse', "STOP");
-        input.value = '';
-        input.disabled = true;
-        input.placeholder = 'haha. real funny, stop it';
+        a('m2');
+        l('R', "STOP");
+        p('haha. real funny, stop it');
 
-        /*Be warned, once spoiled, considered sold, haha*/
+        /*Be warned, once spoiled, considered sold*/
 
       } else if (value.includes('password')) {
-        aP('main-1');
-        localStorage.setItem('lastResponse', "wrong password, try again");
-        input.value = '';
-        input.disabled = true;
-        input.placeholder = 'password not found, refresh to try again';
+        a('m1');
+        l('R', "wrong password, try again");
+        p('password not found, refresh to try again');
 
         /*Might as well just complete the whole story I guess*/
 
       } else if (value === 'incorrect') {
-        aP('alt-2');
-        localStorage.setItem('lastResponse', "What brings you here?");
-        input.value = '';
-        input.disabled = true;
-        input.placeholder = 'OH YOU THNK YOU REAL SLICK';
+        a('a2');
+        l('R', "What brings you here?");
+        p('OH YOU THNK YOU REAL SLICK');
 
         /*Dont you find this boring?*/
 
       } else if (value === 'yes') {
-        aP('alt-end');
+        a('a3');
         let countdown = 5;
         input.disabled = true;
         input.value = '';
@@ -106,97 +208,110 @@
         /*A whole bunch of words with no story?*/
 
       } else if (value === 'no') {
-        aP('main-3');
-        localStorage.setItem('lastResponse', "USER BANNED, come back in 15 years");
-        input.value = '';
-        input.disabled = true;
-        input.placeholder = 'You have been banned';
-        const existingUser = localStorage.getItem('user');
-        const rebel = localStorage.getItem('rebellion');
+        a('m3');
+        l('R', "USER BANNED, come back in 15 years");
+        p('You have been banned');
+        const existingUser = gs('user');
+        const rebel = gs('force');
         if (!existingUser) {
           let person = prompt("Whispers: Hi, what's your name?");
           if (person) {
-            localStorage.setItem('user', person.trim());
+            l('user', person.trim());
+            l('R', `We dont have much time`);
           }
         }
         else if (rebel === "no") {
-          aP('main-4');
-          let joinRebellion = confirm(`Welcome back ${existingUser}, have a change in mind?`);
-          localStorage.setItem('rebellion', joinRebellion ? 'yes' : 'no');
-          if (joinRebellion) {alert("This is where the rebellion resides, just reply no from now on to come back.");}
-          else {alert("Come back when you are ready.")}
+          a('m4');
+          let joinforce = c(`Welcome back ${existingUser}, have a change in mind?`);
+          l('force', joinforce ? 'yes' : 'no');
+          if (joinforce) { r("This is where the force resides, just reply no from now on to come back."); }
+          else { r("Come back when you are ready.") }
         }
         else if (rebel === "yes") {
-          aP('main-5');
-          alert("rebel")
+          a('m5');
+          p('Our elite unit, the brute force stole a vault, but not sure how to open');
+          const bx = g('bx'); 
+          bx.classList.add('show');
         }
+
         else {
-          let joinRebellion = confirm(`So, ${existingUser}. Do you want to join the rebellion?`);
-          localStorage.setItem('rebellion', joinRebellion ? 'yes' : 'no');
-          if (joinRebellion) {alert("This is where the rebellion resides, just reply no from now on to come back.");}
-          else {alert("Pretend this never happened.")}
+          let joinforce = c(`So, ${existingUser}. Do you want to join the force?`);
+          l('force', joinforce ? 'yes' : 'no');
+          if (joinforce) {
+            r("This is where the force resides, just reply no from now on to come back.");
+            l('R', `We managed to inject a backdoor, "no" is your new passphrase`);
+            l('bx', true);
+          }
+          else {
+            r("Pretend this never hapened.")
+          }
         }
 
         /*Have you even tried the game?*/
 
       }
+      else if (value === 'open') {
+        a('t2');
+        s(`
+          <div class="col">
+            <p>Use /help for list of commands
+            <p>Use /progress to track progress
+            <p>Use /updates to check for storyline updates
+            </div>
+        `);
+        return;
+      }
       else if (value === '/updates') {
-        aP('tool-1');
-        input.style.display = 'none';
-        updatesDiv.style.display = 'block';
-        updatesDiv.innerHTML = `
+        a('t1');
+        s(`
           <div class="col">
             <h1>v1.0
             <p>2025-08-01
             <p>Started Game
               <h1>v1.1
                 <p>2025-08-06
-                <p>Added rebellion storyline
+                <p>Added force storyline
                 </div>
-        `;
+        `);
         return;
       }
 
-      /*Look, the rebellion has taken over*/
+      /*Look, the force has taken over*/
 
       else if (value === '/help') {
-        aP('tool-2');
-        input.style.display = 'none';
-        updatesDiv.style.display = 'block';
-        updatesDiv.innerHTML = `
+        a('t2');
+        s(`
           <div class="col">
             <p>Use /help for list of commands
             <p>Use /progress to track progress
             <p>Use /updates to check for storyline updates
             </div>
-        `;
+        `);
         return;
       }/*And the password generator is destroyed*/
       else if (value === '/progress') {
-        aP('tool-3');
-        input.style.display = 'none';
-        updatesDiv.style.display = 'block';
-        const progressList = JSON.parse(localStorage.getItem('progress') || '[]');
-        const grouped = {
-          main: [],
-          alt: [],
-          tool: [],
-          other: []
+        a('t3');
+
+        const progressList = JSON.parse(gs('progress') || '[]');
+        const g = {
+          m: [],
+          a: [],
+          t: [],
+          o: []
         };
 
-/*You have gotten the root, hash and kept password manager in a vault*/
+        /*You have gotten the root, hash and kept password manager in a vault*/
 
         progressList.forEach((item) => {
-          if (item.startsWith('main-')) grouped.main.push(item);
-          else if (item.startsWith('alt-')) grouped.alt.push(item);
-          else if (item.startsWith('tool-')) grouped.tool.push(item);
-          else grouped.other.push(item);
+          if (is('m', item)) g.m.push(item);
+          else if (is('a', item)) g.a.push(item);
+          else if (is('t', item)) g.t.push(item);
+          else g.o.push(item);
         });
 
-
-        const makeTable = (title, items) => {
+        const T = (title, items) => {
           if (!items.length) return '';
-          const rows = items.map((step, i) => `<tr><td>Step ${i + 1}</td><td>${step}</td></tr>`).join('');
+          const rows = items.ma((step, i) => `<tr><td>Step ${i + 1}</td><td>${step}</td></tr>`).join('');
           return `
       <h2>${title}</h2>
       <table border="1" cellpadding="10" cellspacing="0">
@@ -209,25 +324,50 @@
       </table>
     `;
         };
-
-        updatesDiv.innerHTML = `
-    ${makeTable('Main Progress', grouped.main)}
-    ${makeTable('Alternate Paths', grouped.alt)}
-    ${makeTable('Tools Used', grouped.tool)}
-    ${makeTable('Other', grouped.other)}
-  `;
+        s(`
+    ${T('Main Progress', g.m)}
+    ${T('Alternate Paths', g.a)}
+    ${T('Tools Used', g.t)}
+    ${T('Other', g.o)}
+  `);
         return;
       }
 
 
       else {
-        aP(`alt-1`);
-        localStorage.setItem('lastResponse', input.value);
+        a(`a1`);
+        l('R', input.value);
         input.value = '';
         input.placeholder = 'your password is incorrect';
       }
     }
   });
-
-
+  function l(a, b) {
+    return localStorage.setItem(a, String(b));
+  }
+  function gs(a) {
+    return localStorage.getItem(a);
+  }
+  function is(a, b) {
+    return b.startsWith(a);
+  }
+  function g(a) {
+    return document.getElementById(a)
+  }
+  function s(a) {
+    input.style.display = 'none';
+    updatesDiv.style.display = 'block';
+    updatesDiv.innerHTML = a;
+  }
+  function p(a) {
+    input.value = '';
+    input.disabled = true;
+    input.placeholder = a;
+  }
+  function c(a) {
+    return confirm(a)
+  }
+  function r(a) {
+    return alert(a)
+  }
 </script>
