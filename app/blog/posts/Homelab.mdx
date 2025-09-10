@@ -1,0 +1,1076 @@
+---
+title: 'Homelabbing experience'
+publishedAt: '2020-10-09'
+summary: 'Documentation for ai data cluster'
+---
+
+
+# Shopaholic Journey: From Pixel to Homelab
+
+## 📱 My Pixel Detour
+
+When my Oppo broke, I went for a **Google Pixel 6a (\$600)**. Back then, I could’ve gotten a Xiaomi with the same specs for less, but paranoia about Chinese brands (cybersecurity news, spyware fears, etc.) swayed me. Ironically, I’m much more relaxed about it now.
+
+Overall? Solid experience. Smooth browser, no lock-in, Apple-like feel. Only downside is the social sharing gap (no AirDrop).
+
+---
+
+## 🖱️ Of Mice, Keyboards & Poly Life
+
+* Initially dreamed of **Logitech G502**, but I wasn’t gaming.
+* Influencers pushed me towards the **MX Master 3s + MX Mini combo**. Game-changer for productivity. Heavy, professional, premium.
+* But too much efficiency = stress. During poly, I toned it down.
+
+---
+
+## 💻 Laptop Choices
+
+* **Budget:** \$1.5k from my \$3k savings.
+* **Pick:** IdeaPad 514LT7, Intel i7, 16GB RAM, 1TB SSD. Stable but not the best value (Ryzen/Aftershock would’ve been smarter).
+* Later flex: **ThinkPad X1 Carbon** — silky build, perfect with MX Master.
+
+---
+
+## 🎮 Dad’s Legion 5
+
+Dad bought a **Legion 5** for design. Lucky for me, I could finally game. Steam ran smooth, no more negative FPS like my IdeaPad. Racing in F1 with a GameSir made me get the hype.
+
+---
+
+## 🖥️ PC & Homelab Rabbit Hole
+
+![Head](https://dev-portfolio-sven.vercel.app/head.jpeg)
+
+### Day 1 – \$0.50
+
+Before jumping into another device, I had to ask myself: *what’s the real purpose of this remote setup?*
+
+I already own three laptops, and my Pixel phone alone covers most daily computing needs — solid RAM, camera, storage, and even AI features built right in. Do I really need a fourth machine?
+
+The answer lies in **dependability and future-proofing**:
+
+* A system that’s **always on**.
+* Flexible enough to **expand later**.
+* Something I can **rely on daily**, not just another idle gadget.
+
+And what’s the first requirement for such a setup? **Internet.** Preferably a wired connection via RJ45 for stability. So I decided to start small — picking up a **bag of RJ45 connectors on Taobao for just \$0.50**.
+
+A modest beginning, but every setup starts with the basics.
+
+![Sockets](https://dev-portfolio-sven.vercel.app/homelab1.jpg)
+
+### Day 2 – \$30.50
+So my house hardware shop was closing down, and there were decent deals available.
+- CMOS 2023 battery pack for $5 (Things in singapore are expensive)
+- Extention cord for $15
+- Cat6 10m wire, enough to crimp to my hearts content $6
+- Multi-adapter for future mishaps or poor planning $4
+I did a quick survey of where this "Thing" is supposed to be, and ended up decided to use my desk as "The place"
+- It's close to my current setup
+- It's cooler in my room and wont really disrupt anything elsewhere except myself
+- Connect to the only monitor in my house
+On my wall, I have two wall sockets, and not a whole lot of space to play with.
+
+### Day 3 – \$600.50
+
+This project is starting to burn the wallet a bit, but here’s the plan. The network flow goes like this: **ISP → house modem → repeater → wall → network switch**. To make that happen, I picked up:
+
+* **TP-Link RE300 Repeater** – \$100
+* **ASUS TUF Gaming BE6500 Dual Band WiFi 7 Router** – \$350
+* **Huawei HG8240 Series ONT** – \$100
+* **D-Link DMS-105 Switch** – \$20
+
+(I’m not counting mouse, keyboard, or monitor costs here.)
+
+![Crimper](https://dev-portfolio-sven.vercel.app/crimper.jpeg)
+
+---
+
+### Day 4 – \$700.50
+
+With networking gear sorted, it’s time to get hands-on. I grabbed a **crimping tool + testing kit** for about \$100. This will let me terminate my own Cat6 cables with RJ45 connectors and do some simple network runs.
+
+The target? To have my setup consistently running at **2.5 Gbps**.
+
+---
+
+# ⚡ Why 2.5 Gbps Became the Sweet Spot
+
+1. **Backwards Compatibility with Cat5e**
+
+   * Works with old wiring without re-cabling.
+   * Delivers \~2.5× faster speeds with no infrastructure changes.
+
+2. **Wi-Fi 6/6E Backhaul**
+
+   * Modern access points push beyond 1 Gbps.
+   * 2.5G uplink is the affordable, practical middle ground.
+
+3. **Lower Power & Heat**
+
+   * Easier to cool, better for silent consumer gear and homelabs.
+
+4. **Cost Efficiency**
+
+   * Much cheaper than 5G/10G hardware, but a big jump over 1G.
+
+5. **Industry Adoption**
+
+   * Pushed by the NBASE-T Alliance; widely compatible today.
+
+6. **Practical Speeds**
+
+   * Perfect for SSDs, NAS, and 2 Gbps fiber plans.
+   * Few home users need more unless doing enterprise work.
+
+✅ **In short:** 2.5 Gbps is the practical bridge between legacy 1 Gbps and high-end 10 Gbps — affordable, plug-and-play, and more than enough for most homelabs.
+
+---
+
+![Screwset](https://dev-portfolio-sven.vercel.app/screwset.jpeg)
+
+### Day 5 – \$705
+
+With the hardware store about to close, I made one last quick run:
+
+* **\$0.50 roll of tape**
+* **\$4 screwset (31 pieces)** — covers most PC screw sizes.
+
+That brings me to **\$705 in** so far… and still nothing is actually usable yet. Time to start planning for the **first real device** soon.
+
+### Day 6 – \$750
+
+I bought some HDMI and Thunderbolt cables, which are always a good investment, and did some research. Well, something I have always wanted is more storage, not counting them into the total cost, I have 4 1 TB Seagate drives lying around.
+That's when it hit me: I should start with a file server—something lightweight, affordable, and excellent for serving files. Having a server is not it, and neither is a desktop/workstation. And am I really that geeked out to run a Rpi server?
+Also, I don't have enough spare phones to run this, so I'll have to look into finding a mini-PC for this task. Well there's this brand that I have always liked it's motto that seemed perfect for this job. A small intel pc, with 2gb ports, hdmi and 4 usb would be what I am looking for.
+
+
+You asked: **What’s the story of Trigkey, and what’s their motto?**
+
+
+### Company Background
+
+**Trigkey** is a Chinese mini-PC and computer hardware brand headquartered in Shenzhen, Guangdong. It was founded fairly recently, in **2021**, as a sibling brand to **Beelink** under the same parent compan
+
+They entered the consumer electronics market with a clear focus: crafting compact desktops that enhance office environments while conserving space
+
+---
+
+### Their Motto
+
+While Trigkey doesn’t prominently use a stylized tagline like some brands, their guiding principle is clearly stated as:
+
+> **"Exploring technology, green life"** (sometimes rendered as *“discovery technology green life”*)
+This captures their mission to integrate the latest tech into daily life while delivering energy-efficient, high-performance mini PCs.
+
+---
+
+### Vision & Approach
+
+* Their core **goal** is to **manufacture energy-saving devices that retain high performance**, striking a balance between efficiency and usability
+* **Quality control** is central to their process—they emphasize documentation, rigorous testing, setting quality standards, and training staff to ensure product reliability while offering **competitive pricing**
+
+---
+
+### Summary
+
+* **Origin**: Founded in 2021, based in Shenzhen; a sister brand to Beelink.
+* **Mission**: Build compact desktop PCs to enhance office setups and save space.
+* **Motto/Concept**: *“Exploring technology, green life”* — blending innovation with energy efficiency.
+* **Focus**: Strong quality control, competitive pricing, and eco-conscious design.
+
+![Nas](https://dev-portfolio-sven.vercel.app/nas.jpeg)
+
+
+### Day 7 – \$855
+
+Today marks the start of my actual **homelab build** with a small NAS system, powered by a **Trigkey N100 mini-PC** I picked up from Amazon for around **\$150**. It runs on an Intel N100 (4 cores / 4 threads) — very power efficient, but not exactly built for heavy multitasking.
+
+For storage, I’ve set it up with:
+
+* **4 × 1TB HDDs** in a **RAID 10** array (a balance of performance + redundancy).
+* **1 × 500GB HDD** mounted separately for lighter, non-critical tasks.
+
+This gives me two mount points:
+
+* RAID 10 → main storage
+* 500GB → misc storage
+
+---
+
+#### ✅ Pros of the Trigkey N100
+
+* **Very efficient:** \~6–10W idle, \~20W under load.
+* **Silent & compact:** easy to hide on a shelf or corner.
+* **Low cost entry point** into homelabs.
+* Great for **light services**: file storage, Pi-hole, Docker with low concurrency, Nextcloud, etc.
+
+#### ⚠️ Cons of the Trigkey N100
+
+* Only **4c/4t**, weak at parallel loads.
+* **Limited expandability:** max 16–32GB RAM, single NVMe slot.
+* **Not ideal** for CPU-heavy work: media transcoding, AI inference, or big DBs.
+* **Shared resources:** RAID I/O can saturate it quickly.
+
+---
+
+#### 🛠️ Setup Journey
+
+1. Installed **Ubuntu Server** over ethernet, then moved it to WiFi to keep it as an **isolated island**.
+2. Connected it back via **Tailscale** as an edge node.
+3. Deployed **AdGuard** to run DHCP and route Tailscale traffic through it.
+4. Installed **Active Directory** and enabled an **SMB share** on the 500GB disk for multi-device access.
+5. Added **Filebrowser**, mapped to the RAID 10 array, with a daemon to survive reboots, proxied via ngrok.
+6. Installed **Cockpit** for quick phone-based monitoring.
+
+---
+
+#### 🌡️ Long-Term Reliability Considerations
+
+To make the NAS last, I focused on **heat and electricity**:
+
+* HDDs spaced apart for better airflow.
+* Smaller-capacity disks = less CPU strain, less heat.
+* RAID config chosen for balance of redundancy and reduced load on the N100.
+* HDDs are cheaper than SSDs — and for now, more cost-effective.
+
+Security-wise, I sandboxed it: endpoint antivirus + IDS/IPS. Worst case, only my \$150 NAS gets hit.
+
+---
+
+With this, my **first real homelab node is alive** 🎉. It’s not a powerhouse, but it’s a dependable starting point. From here, I can expand and layer more services over time.
+
+
+### Day 7 – \$860
+
+Some to give you guys some context here is what raiding means in "My World"
+
+- ⚡ RAID Levels Explained
+
+### RAID 0 – **Striping**
+
+* **How it works:** Splits data across 2+ drives.
+* **Pros:** Fastest read/write speed, full storage capacity.
+* **Cons:** Zero redundancy — if one drive fails, all data is lost.
+* **Use case:** Temporary scratch disks, gaming, or fast caches where data isn’t critical.
+
+---
+
+### RAID 1 – **Mirroring**
+
+* **How it works:** Each drive has an exact copy (2 drives minimum).
+* **Pros:** High redundancy (safe if 1 drive fails), simple to set up.
+* **Cons:** Storage efficiency = 50% (2× 2TB = only 2TB usable).
+* **Use case:** Important small-scale systems (boot drives, business PCs, critical docs).
+
+---
+
+### RAID 5 – **Striping + Parity**
+
+* **How it works:** Spreads data across 3+ drives with 1 drive worth of parity.
+* **Pros:** Redundancy with good storage efficiency (\~67–80%), decent read speed.
+* **Cons:** Write speed slower (parity calc), rebuilds can stress drives. If 2 drives fail = data loss.
+* **Use case:** Home/SMB NAS where capacity + redundancy are both important.
+
+---
+
+### RAID 6 – **Double Parity**
+
+* **How it works:** Like RAID 5, but with 2 drives worth of parity.
+* **Pros:** Survives 2 drive failures. Safer for large arrays.
+* **Cons:** More storage overhead, slower writes.
+* **Use case:** Enterprise NAS, archival storage with many disks.
+
+---
+
+### RAID 10 – **Striping + Mirroring**
+
+* **How it works:** Combines RAID 1 and 0 (4+ drives).
+* **Pros:** Fast + redundant, quick rebuilds.
+* **Cons:** 50% efficiency, needs more drives.
+* **Use case:** High-performance setups where uptime + speed both matter (databases, VMs).
+
+---
+
+### Other RAID Levels
+
+* **RAID 50/60:** Hybrid of RAID 5/6 with striping across groups. Used in big storage arrays.
+* **JBOD (Just a Bunch of Disks):** No RAID, just combines drives into one big volume.
+
+---
+
+# 🆚 RAID vs Other Storage Systems
+
+### 🔹 Unraid
+
+* **How it works:** Each drive has its own file system; one or two drives provide parity.
+* **Pros:**
+
+  * Add different-sized disks freely.
+  * Only parity drives need to be as big as your largest disk.
+  * If multiple drives fail, you still keep data from unaffected drives.
+* **Cons:**
+
+  * Slower writes (unless using cache SSD).
+  * Not true RAID performance.
+* **Use case:** Great for **home NAS with mixed disks**, media servers, expandable storage.
+
+---
+
+### 🔹 TrueNAS (FreeNAS) + ZFS
+
+* **ZFS is both a file system and volume manager** with integrated RAID-like features.
+* **Pros:**
+
+  * End-to-end data integrity (checksums, self-healing).
+  * Advanced RAID options (RAID-Z1, Z2, Z3).
+  * Snapshots & replication built in.
+* **Cons:**
+
+  * Needs lots of RAM (1GB per TB recommended).
+  * Complex for beginners.
+* **Use case:** Rock-solid NAS, business-grade storage, archival, enterprise homelabs.
+
+---
+
+### 🔹 ZFS RAID-Z (RAID 5/6 Equivalent)
+
+* **RAID-Z1:** Like RAID 5 (1 disk parity).
+* **RAID-Z2:** Like RAID 6 (2 disk parity).
+* **RAID-Z3:** Triple parity, very safe but more overhead.
+* **Benefit:** Better at avoiding “RAID write hole” (corruption during rebuild).
+
+---
+
+### Quick Comparison
+
+| System      | Expandable | Performance         | Fault Tolerance  | Best For                |
+| ----------- | ---------- | ------------------- | ---------------- | ----------------------- |
+| RAID 0      | No         | 🚀🚀🚀              | ❌ None           | Speed only              |
+| RAID 1      | No         | 🚀🚀                | ✅ 1 drive fail   | Small but critical      |
+| RAID 5      | No         | 🚀🚀                | ✅ 1 drive fail   | Balanced home NAS       |
+| RAID 6      | No         | 🚀                  | ✅ 2 drives fail  | Large arrays            |
+| RAID 10     | No         | 🚀🚀🚀              | ✅ 1 per mirror   | Fast + safe, but costly |
+| Unraid      | ✅ Yes      | 🚀 (with SSD cache) | ✅ 1–2 drive fail | Flexible mixed disks    |
+| ZFS/TrueNAS | Limited    | 🚀🚀                | ✅ up to 3 drives | Enterprise-grade        |
+
+---
+
+# ✅ TL;DR
+
+* **RAID 0/1/5/6/10** = classic hardware/software RAID, but rigid (all disks should be same size).
+* **Unraid** = flexible, easy to expand with mixed disks, great for homelabs.
+* **TrueNAS/ZFS** = enterprise-level integrity + features, best if you want **serious data protection**.
+
+I mnted seagate to /mnt, set fstab as service
+I then forgot about it and added 5 more disks, tried a raid 10, of course, it wouldn't work.
+I thought the tailscale issue, so I went to 0 superblock. The UUID of the disk surely changes.
+I then proceeded to make NTFS of it, and it confirmed fail, but Idk why (conflict proc), then I tried sudo reboot cause of tailscale. 
+fstab confirm crash the whole pc. Now remember by tailscale routes through nas a dhcp, so whole lan kenna crash. 
+Now I panic because no lan, no outbound. Then I understood why. Wasted whole day but using raid 5 now waiting for 9.9 sales. Shifted homelab from living room because I have singtel wifi for a reason.
+Therefore, I transitioned it to a ZFS file system. Spent $5 on a blow brush for dusting off stuff in the future.
+
+### Day 8 – \$880
+
+# ⚡ Power, Resilience, and Why a UPS Matters for Your Homelab
+
+When building a homelab or even just a reliable home PC setup, one of the most overlooked components isn’t a CPU or GPU — it’s **power protection**. Let’s break down why.
+
+---
+
+## 🔌 What Is a UPS?
+
+A **UPS (Uninterruptible Power Supply)** is more than just a fancy power strip. It’s essentially a **battery backup** combined with power conditioning:
+
+* **Battery Backup:** Keeps your devices alive for a few minutes (or hours, depending on size) when wall power cuts out. That gives you time to **save work, safely shut down, or ride through a short outage**.
+* **Power Conditioning:** Filters out spikes, dips, and surges in the incoming electricity so your devices get **clean, stable voltage**.
+
+Think of it as a shock absorber for your electronics — smoothing the ride between your wall socket and your PC/NAS.
+
+---
+
+## ⚠️ Why Wall Power Is “Dirty”
+
+The electricity that comes out of your wall isn’t as perfect as we imagine. It’s considered **“dirty” power** because it fluctuates due to:
+
+* **Voltage spikes** (lightning strikes, heavy appliances switching on).
+* **Brownouts** (temporary low voltage during high demand).
+* **Electrical noise** (microwaves, fridges, motors feeding interference into the line).
+
+Your devices might survive these hiccups day-to-day, but over time they **degrade power supplies, shorten component lifespan, and corrupt data during outages**.
+
+---
+
+## 🛡️ What Is Resilience in Computing?
+
+**Resilience** means your system can continue operating — or at least recover gracefully — even when something goes wrong.
+
+For homelabs, resilience =
+
+* Surviving power outages without corrupting drives.
+* Keeping services (NAS, DNS, VMs) running during short blackouts.
+* Preventing hardware stress from repeated restarts.
+
+Without resilience, a single power flicker can lead to **RAID rebuilds, file system corruption, or even fried components**.
+
+---
+
+## 💾 How Different Memory/Storage Types React to Power Outages
+
+Not all data lives in the same kind of “memory.” Here’s how each behaves when the lights go out:
+
+### 1. **RAM (Random Access Memory)**
+
+* **Volatile** → Data is lost instantly when power cuts.
+* **Impact of outage:** Open documents, running apps, and in-memory processes vanish.
+* **Resilience fix:** Save frequently, use autosave features, or keep a UPS to avoid sudden shutdowns.
+
+---
+
+### 2. **HDD (Hard Disk Drive)**
+
+* **Mechanical platters + read/write heads.**
+* **Impact of outage:** If power cuts mid-write, the head may not park properly → **data corruption** or physical disk damage.
+* **Resilience fix:** UPS allows graceful shutdown and head parking. Journaling file systems (ext4, NTFS) help recover but aren’t perfect.
+
+---
+
+### 3. **SSD (SATA SSD)**
+
+* **Flash storage with controller & cache.**
+* **Impact of outage:** Incomplete writes can corrupt files or even the translation layer (FAT/metadata). Some drives lose cache data.
+* **Resilience fix:** Enterprise SSDs often include **power-loss protection capacitors**. For consumer SSDs, a UPS reduces the risk.
+
+---
+
+### 4. **NVMe SSD**
+
+* Same risks as SSD, but faster → more data in flight when power drops.
+* **Impact of outage:** Higher chance of corruption if writes are interrupted.
+* **Resilience fix:** UPS or capacitors in high-end drives.
+
+---
+
+### 5. **VRAM (GPU Memory)**
+
+* Like RAM, it’s **volatile**.
+* **Impact of outage:** No long-term risk, but you lose whatever was being processed (e.g., rendering, AI inference).
+* **Resilience fix:** UPS is only relevant if you need GPUs to finish jobs cleanly.
+
+---
+
+## 📝 Putting It Together
+
+* **RAM/VRAM** → volatile, always wiped during outages.
+* **HDD/SSD/NVMe** → non-volatile, but can get **corrupted mid-write**.
+* **UPS** = protects against both **data loss** (by giving you time to save/flush writes) and **hardware stress** (by filtering dirty power).
+
+---
+
+## ✅ TL;DR
+
+A UPS isn’t a luxury — it’s a **resilience enabler**.
+
+* Wall power is unstable (“dirty”), which wears down electronics.
+* A UPS keeps your system alive during outages, giving you time to save data and shut down cleanly.
+* RAM and VRAM lose data instantly, while HDDs/SSDs/NVMes risk corruption without proper shutdown.
+
+**If you value your homelab, NAS, or even just your main PC, a UPS is one of the smartest investments you can make.**
+
+Eaton is considered one of the better UPS brands because it blends enterprise-grade reliability, pure sine wave output, better efficiency, and longer warranties,
+often at competitive pricing. APC remains the popular household brand, but Eaton is the go-to when you want something that feels closer to datacenter quality
+for your homelab or critical devices.
+
+After the scare that was yesterday, I decided to buy a ups as well for future proofing of devices for shorter downtimes. $20
+
+### Day 9 – \$1,350
+
+Ironwolf pro 18tb $470
+
+
+# Why I Chose Seagate (IronWolf Pro) for My NAS — and Why 18TB Is the Sweet Spot
+
+I’ve been slowly shaping my homelab into something I can actually rely on day-to-day. The heart of it is a NAS I first stood up on a **Trigkey N100**: low power, quiet, and perfect for learning. I started with mixed HDDs (RAID10 + a separate 500 GB volume), then set my sights on **proper NAS-grade drives** as I scale capacity.
+
+Before the choice, I had to clarify the tech:
+
+## CMR vs SMR vs HAMR (super short)
+
+* **CMR (Conventional Magnetic Recording):** non-overlapping tracks → **consistent writes**, great for RAID/NAS.
+* **SMR (Shingled Magnetic Recording):** overlapping tracks → higher density but **slower/random writes**; rebuilds can be painful.
+* **HAMR (Heat-Assisted Magnetic Recording):** laser-assisted writes for **ultra-high capacities**; exciting, but newer and pricier.
+
+For a NAS that will rebuild, scrub, and serve mixed workloads, **CMR is the safe, boring, and correct choice**.
+
+## So… why **Seagate**, specifically?
+
+I went with **Seagate IronWolf Pro** because it hits the NAS checklist without drama:
+
+* **All-CMR in this tier:** No surprise SMR models sneaking into arrays that need steady random writes and clean rebuilds.
+* **NAS-tuned firmware (AgileArray):** Optimized for multi-bay vibration, RAID behavior, and quick error handling—exactly what you want during rebuilds.
+* **Vibration & 24/7 ratings:** Built for always-on enclosures; RV sensors and higher endurance/workload ratings than typical desktop drives.
+* **IronWolf Health Management:** Extra telemetry/health hooks (works best with popular NAS OSes), useful for pre-fail warnings.
+* **Rescue Data Recovery (often included for a couple of years):** Not a plan to fail, but a real backstop if the worst happens.
+* **Availability & value:** In SG, IronWolf Pro is easy to source, frequently discounted, and **price/TB is competitive** versus other NAS lines.
+
+Bottom line: Seagate’s **IronWolf Pro** gives me predictable CMR performance, NAS-specific features, and better guardrails if something goes sideways—exactly what I want when my array is rebuilding at 3 AM.
+
+## Why **18 TB** is my current sweet spot
+
+I picked up **18 TB** at **\~S\$24/TB** — and here’s why that capacity makes sense:
+
+1. **Best value curve right now:** Below 16 TB, \$/TB is usually worse; above 18–20 TB, you start paying early-adopter tax.
+2. **CMR + sanity:** Many 18 TB SKUs are CMR, so I get NAS-friendly behavior without stepping into newer HAMR pricing.
+3. **Rebuild risk vs time:** Bigger drives mean longer rebuilds (and higher second-failure risk). **18 TB is still manageable** compared to 20–22 TB, especially on modest CPUs like my N100.
+4. **Planning headroom:** With 18 TB units, even a small 3-bay gives real, future-proof capacity (and I can still move to ZFS RAIDZ2 later if I expand).
+
+## My setup story (the short version)
+
+* **Compute:** Trigkey N100 NAS (quiet, \~6–20 W), later pairing with beefier nodes (Evo X1) for heavier tasks.
+* **Disks:** Moving from a learning RAID10 to **IronWolf Pro** as I consolidate and scale.
+* **Network:** Targeting **2.5 GbE** as the practical sweet spot—works on existing cabling, cheap NICs/switches, fast enough for SSD-backed shares.
+* **Power:** Lining up an **Eaton UPS** so rebuilds and writes survive brownouts (clean shutdowns > corrupted arrays).
+
+If you’re building similar: pick **CMR** for NAS, lean into **IronWolf Pro** for the NAS-specific perks and recovery safety net, and don’t sleep on **18 TB** while the price curve is friendly. Your future self (and your rebuild times) will thank you.
+
+### Day 10 – \$1,360
+
+Here’s a cleaned-up rephrase for **Day 10**, with an expanded section on different ways HDDs can be stored and used:
+
+---
+
+### Day 10 – \$1,360
+
+Picked up a **Maiwo HDD enclosure for \$10**.
+This was honestly the hardest decision so far — there are just so many brands, so many form factors, and endless “future-proof” options. But at the end of the day, I decided to stay practical: who really needs more than **30 TB of local data** in a home setup, especially when I still use cloud services?
+
+---
+
+## 🗂️ Different Ways to Store & Use HDDs
+
+When it comes to spinning disks, there isn’t a single “right” way — it all depends on your budget, use case, and how much resilience you want:
+
+### 🔹 NAS (Network Attached Storage)
+
+* A purpose-built enclosure with its own OS (Synology, QNAP, or DIY TrueNAS).
+* Provides redundancy (RAID/ZFS), network sharing, snapshots, and remote access.
+* Best for **always-on home or office setups** where multiple users/devices need reliable storage.
+
+### 🔹 Dedicated Mini PC as a NAS
+
+* Using a small PC (like my Trigkey N100 or Evo X1) with Linux/TrueNAS/Unraid.
+* More flexible: can run extra services (Docker, VMs) alongside storage.
+* Slightly more complex than a consumer NAS, but **better value and customizable**.
+
+### 🔹 Docking Stations
+
+* A “toaster-style” dock where you slot in bare drives (single or dual bay).
+* Great for **quick backups, cloning, or temporary access**.
+* Not designed for 24/7 uptime — drives are exposed, no cooling, limited redundancy.
+
+### 🔹 Open Drive Arrays (JBOD / DIY Racks)
+
+* Barebone chassis or open trays holding multiple drives.
+* Often paired with a dedicated controller card or HBA.
+* Cheaper and highly expandable, but requires **manual configuration** (RAID, cooling, power).
+
+### 🔹 Direct Wire Connection
+
+* Plugging bare drives directly into a motherboard or via SATA-to-USB adapters.
+* Cheap, quick, but messy and fragile for long-term use.
+* Good for **data recovery or one-time migrations**, not as primary storage.
+
+### 🔹 External Enclosures
+
+* Like my Maiwo: sealed cases (single or multi-bay) that connect via USB-C, Thunderbolt, or eSATA.
+* Protects drives, adds cooling, and makes them portable.
+* Ideal balance for **individuals who don’t want a full NAS but still need reliable storage expansion**.
+
+Here’s a **blog-style summary** that gives a digestible overview of **S2D, Ceph, and vSAN**, plus why consensus matters in distributed storage:
+
+---
+
+# 🌀 S2D vs. Ceph vs. vSAN – A Quick Guide to Distributed Storage
+
+When you scale storage beyond a single box, you enter the world of **distributed storage systems**. Three big names often come up: **Microsoft S2D (Storage Spaces Direct), Ceph, and VMware vSAN**. They all serve the same purpose — pooling disks across multiple servers into one resilient storage fabric — but they do it in different ways.
+
+---
+
+## 🔹 Storage Spaces Direct (S2D)
+
+* **What it is:** Microsoft’s software-defined storage built into Windows Server Datacenter.
+* **How it works:** Pools local disks across Windows cluster nodes, presenting them as highly available storage volumes. Uses **ReFS/NTFS** plus **SMB3** for data access.
+* **Why people choose it:**
+
+  * Deep integration with **Windows ecosystem** (Hyper-V, Active Directory).
+  * Easy to manage with Windows Admin Center.
+  * Licensing often bundled with Datacenter edition.
+* **Best for:** Enterprises already invested heavily in **Microsoft infrastructure**.
+
+---
+
+## 🔹 Ceph
+
+* **What it is:** Open-source, massively scalable distributed storage system.
+* **How it works:** Uses **RADOS** (Reliable Autonomic Distributed Object Store) to spread objects across nodes with replication or erasure coding. Exposes storage as **block (RBD), object (S3/Swift), or file (CephFS)**.
+* **Why people choose it:**
+
+  * **Flexibility + scale** — runs on commodity hardware, scales to petabytes.
+  * Widely used in **OpenStack, Kubernetes, and homelabs**.
+  * Open-source community with lots of tunability.
+* **Best for:** Organizations needing **cloud-style storage on commodity gear** or open-source enthusiasts.
+
+---
+
+## 🔹 VMware vSAN
+
+* **What it is:** VMware’s hyper-converged storage solution.
+* **How it works:** Aggregates local disks of ESXi hosts into a shared datastore managed at the hypervisor layer. Uses **VMware clustering & DRS** for performance and resilience.
+* **Why people choose it:**
+
+  * Tight integration with **VMware vSphere**.
+  * Single-pane-of-glass management for compute + storage.
+  * Certified hardware = predictable performance.
+* **Best for:** Enterprises standardizing on **VMware virtualization** and looking for simplicity.
+
+---
+
+## ⚖️ Key Differences
+
+| Feature       | S2D (Microsoft)            | Ceph (Open-Source)              | vSAN (VMware)                |
+| ------------- | -------------------------- | ------------------------------- | ---------------------------- |
+| Ecosystem     | Windows only               | Linux/open-source               | VMware ESXi                  |
+| Scalability   | Moderate (dozens of nodes) | Massive (1000s of nodes)        | High (hundreds of nodes)     |
+| Cost          | Windows licensing          | Free (hardware + ops cost)      | VMware licensing (expensive) |
+| Flexibility   | Limited (Windows stack)    | Very high (block, file, object) | Limited (VMware only)        |
+| Best Use Case | Windows shops              | Cloud-style storage             | VMware shops                 |
+
+---
+
+# 🔑 Why Consensus Is Needed
+
+Distributed storage relies on multiple servers (nodes) working together. To maintain **consistency and reliability**, the system needs **consensus** — an agreement between nodes about the current state of the data.
+
+### Without consensus, you risk:
+
+* **Split-brain scenarios:** Two nodes think they own the “truth” → data divergence.
+* **Silent corruption:** Writes acknowledged by one node but not replicated.
+* **Inconsistent recovery:** After failures, nodes disagree on which version of the data is valid.
+
+### How consensus is achieved
+
+* **Quorums:** Majority of nodes must agree before a write is considered committed.
+* **Algorithms:** Paxos, Raft, and variations (Ceph uses CRUSH maps + monitors, vSAN/S2D use quorum + witness nodes).
+* **Purpose:** Ensures that even if some nodes fail, the cluster agrees on the single, correct version of data.
+
+File systems are one of those things we all use daily but rarely stop to compare. Here’s a **blog-style comparison** of common ones:
+
+---
+
+# 📂 File Systems Explained: Object, NTFS, ext, ext4, and More
+
+When data sits on disk, it isn’t just “raw bits” — it’s organized by a **file system**. Different file systems are designed with different trade-offs in mind: performance, reliability, compatibility, and features.
+
+---
+
+## 🔹 Object Storage
+
+* **What it is:** Instead of files/folders, data is stored as **objects** with metadata + a unique ID.
+* **Examples:** Amazon S3, Ceph Object, OpenStack Swift, MinIO.
+* **Pros:**
+
+  * Infinitely scalable.
+  * Great for cloud-native apps, backups, streaming media.
+  * Metadata-rich (useful for search + AI).
+* **Cons:**
+
+  * High latency compared to local file systems.
+  * Not optimized for small, random reads/writes.
+* **Best use:** Cloud storage, big data, backups, content delivery.
+
+---
+
+## 🔹 FAT / FAT32 (File Allocation Table)
+
+* **What it is:** Early Microsoft system, still used for USB drives.
+* **Pros:**
+
+  * Universally compatible (works on almost every OS/device).
+* **Cons:**
+
+  * Max file size = **4 GB**.
+  * Max volume = **8 TB** (with tweaks).
+  * No journaling (higher risk of corruption).
+* **Best use:** Small removable drives, cross-platform transfers.
+
+---
+
+## 🔹 NTFS (New Technology File System)
+
+* **What it is:** Default for Windows since Windows XP.
+* **Pros:**
+
+  * Journaling for crash recovery.
+  * Permissions, compression, encryption (EFS), quotas.
+  * Large file/volume support.
+* **Cons:**
+
+  * Windows-centric (Linux/macOS support is partial).
+  * More overhead compared to simpler FS.
+* **Best use:** Windows desktops, servers, external drives in Windows environments.
+
+---
+
+## 🔹 ext (Extended File System Family)
+
+* **ext2:**
+
+  * Early Linux file system.
+  * Lightweight, no journaling (faster, but risky).
+  * Still used for SD cards, boot partitions.
+
+* **ext3:**
+
+  * Adds journaling → safer than ext2.
+  * Backward compatible.
+  * Now mostly obsolete.
+
+* **ext4 (default for modern Linux):**
+
+  * Journaling, extents (faster for large files).
+  * Supports **files up to 16 TB** and **volumes up to 1 EB**.
+  * Stable, reliable, good performance.
+
+* **Best use:** Linux desktops, servers, NAS.
+
+---
+
+## 🔹 XFS
+
+* **What it is:** High-performance journaling file system from SGI.
+* **Pros:**
+
+  * Great at handling **large files and parallel I/O**.
+  * Scales well for enterprise servers.
+* **Cons:**
+
+  * Slower at lots of tiny files.
+  * Limited shrinking support.
+* **Best use:** Linux enterprise servers, media servers, databases.
+
+---
+
+## 🔹 Btrfs (B-tree FS)
+
+* **What it is:** Modern Linux FS with copy-on-write (CoW).
+* **Pros:**
+
+  * Snapshots, checksums, compression, subvolumes.
+  * RAID support built-in.
+* **Cons:**
+
+  * Some features still experimental under heavy enterprise loads.
+* **Best use:** Advanced Linux servers, self-healing storage, homelabs.
+
+---
+
+## 🔹 ZFS
+
+* **What it is:** File system + volume manager, designed by Sun Microsystems.
+* **Pros:**
+
+  * End-to-end checksumming (self-healing).
+  * Snapshots, cloning, compression, encryption.
+  * RAID-Z support built-in.
+* **Cons:**
+
+  * High memory usage (rule of thumb: 1 GB RAM per 1 TB storage).
+  * Complex.
+* **Best use:** NAS, mission-critical servers, archival.
+
+---
+
+## 📊 Quick Comparison
+
+| File System        | OS Ecosystem   | Journaling     | Max File Size       | Best Use Case                |
+| ------------------ | -------------- | -------------- | ------------------- | ---------------------------- |
+| **Object Storage** | Cloud-native   | N/A            | Virtually unlimited | Scalable backups, cloud apps |
+| **FAT32**          | Universal      | ❌              | 4 GB                | USBs, cross-device           |
+| **NTFS**           | Windows        | ✅              | 16 TB               | Windows PCs/servers          |
+| **ext2/3**         | Linux          | ext2 ❌, ext3 ✅ | 2–16 TB             | Legacy Linux, boot           |
+| **ext4**           | Linux          | ✅              | 16 TB               | Default Linux FS             |
+| **XFS**            | Linux          | ✅              | 8 EB                | Large files, media           |
+| **Btrfs**          | Linux          | ✅ (CoW)        | 16 EB               | Snapshots, homelabs          |
+| **ZFS**            | Cross-platform | ✅ (checksums)  | 16 EB               | NAS, enterprise              |
+
+---
+
+# 🗂️ File Systems and How They Interact with RAID, ZFS, and Unraid
+
+When you put multiple drives together, you need both a **storage strategy** (RAID, Unraid, ZFS) and a **file system** (ext4, NTFS, etc.). They work at different layers:
+
+* **RAID/Unraid/ZFS** → decides *how disks are combined* (striped, mirrored, parity, object store).
+* **File system** → decides *how files are organized on top* (journaling, snapshots, metadata).
+
+---
+
+## 🔹 Classic RAID (0/1/5/6/10) + File Systems
+
+* Traditional RAID is handled by hardware controllers or software RAID (mdadm in Linux).
+* Once the array is created, you format it with a **file system** like ext4, NTFS, or XFS.
+* The file system is unaware it’s running on a RAID — it just sees one “big disk.”
+
+**Example:**
+
+* Linux NAS → RAID 10 via `mdadm` → formatted with **ext4**.
+* Windows Server → RAID 5 on hardware → formatted with **NTFS**.
+
+✅ **Good for:** Simple, predictable setups.
+⚠️ **Limitations:** RAID doesn’t protect against *silent corruption*; it only handles drive failure.
+
+---
+
+## 🔹 ZFS (Integrated FS + RAID)
+
+* ZFS is **both a file system and volume manager**.
+* It has its own RAID-like layers (RAID-Z1, RAID-Z2, etc.), no need for separate RAID.
+* Built-in features:
+
+  * End-to-end **checksumming** (detects + corrects corruption).
+  * **Snapshots** and cloning.
+  * Compression and deduplication.
+
+✅ **Good for:** Data integrity, enterprise NAS, archival.
+⚠️ **Limitations:** High RAM requirement (rule of thumb: 1 GB RAM per 1 TB storage).
+
+**Why people love ZFS:** If you write a file, ZFS can verify later that it hasn’t silently corrupted — something RAID + ext4/NTFS can’t guarantee.
+
+---
+
+## 🔹 Unraid (Flexible Array + File System Choice)
+
+* Unlike RAID, Unraid stores each disk with its **own file system** (commonly XFS, sometimes Btrfs).
+* Parity is calculated separately, not striping across all disks.
+* This means:
+
+  * You can mix and match disk sizes.
+  * If multiple disks fail, the unaffected disks are still readable individually.
+
+✅ **Good for:** Homelabs, mixed drives, expandable storage.
+⚠️ **Limitations:** Slower writes unless you use an SSD cache; not as fast as RAID10 or ZFS.
+
+**Why file system choice matters in Unraid:**
+
+* **XFS** = stable, simple, high performance.
+* **Btrfs** = snapshots, CoW, but heavier and less mature under constant RAID stress.
+
+---
+
+## 🔹 How ext4, NTFS, XFS, Btrfs fit in
+
+* **ext4:** Default Linux FS; reliable choice for software RAID arrays.
+* **NTFS:** Windows-only; common for hardware RAID on Windows servers.
+* **XFS:** Strong performance with large files, used in many NAS distros (e.g., Unraid).
+* **Btrfs:** Modern Linux FS with built-in RAID features, but less robust than ZFS.
+
+---
+
+## 📊 At a Glance
+
+| Approach         | Handles RAID       | File System(s) Used | Strengths                 | Weaknesses           |
+| ---------------- | ------------------ | ------------------- | ------------------------- | -------------------- |
+| **Classic RAID** | Separate (HW/SW)   | ext4, NTFS, XFS     | Simple, familiar          | No corruption checks |
+| **ZFS**          | Integrated         | ZFS (only)          | Data integrity, snapshots | RAM-hungry           |
+| **Unraid**       | Flexible, per-disk | XFS, Btrfs          | Mix sizes, easy recovery  | Slower writes        |
+| **Btrfs RAID**   | Integrated         | Btrfs               | Snapshots, CoW            | Not as proven as ZFS |
+
+---
+
+# 🏡 File Systems, RAID, and My Homelab Choices
+
+When I started my homelab on the **Trigkey N100**, I knew storage would be the heart of it. I had five HDDs on hand, so I went with a **RAID 10** setup for balance — decent performance and redundancy, without overloading the N100’s modest CPU.
+
+## 🔹 Why ext4 Made Sense (for Now)
+
+I formatted my RAID 10 array with **ext4**, the Linux default. It’s:
+
+* Lightweight and reliable.
+* Well-supported across every distro.
+* Easy to recover with standard Linux tools.
+
+For a beginner-friendly NAS build, ext4 just works.
+
+⚠️ Limitation: ext4 doesn’t detect **silent corruption**. If a bit flips on disk, RAID won’t catch it, and ext4 won’t notice until it’s too late.
+
+---
+
+## 🔹 When I Might Want ZFS
+
+Down the road, I see myself moving to **ZFS** when I add bigger disks (like the 18TB IronWolf Pro I’m eyeing). Why?
+
+* **Data integrity:** End-to-end checksums mean I’ll know if files silently corrupt.
+* **Snapshots & cloning:** Perfect for testing, backups, or rolling back a bad config.
+* **RAID-Z:** Safer rebuilds compared to mdadm RAID 5/6.
+
+⚠️ Trade-off: ZFS eats RAM (rule of thumb: 1 GB RAM per 1 TB of storage). My N100 can’t handle it gracefully, so I’d need to run ZFS on a beefier box (like my Evo X1 or a future node).
+
+---
+
+## 🔹 Why Not Unraid (Yet)
+
+Unraid is tempting, especially since I’ve collected a mix of drive sizes. Its flexibility — letting each disk keep its own file system (usually XFS) with parity on top — is attractive.
+
+* I could add drives one by one, no need for identical sizes.
+* If two drives fail, the rest are still mountable individually.
+* Easy to expand as my homelab grows.
+
+⚠️ Limitation: Unraid isn’t as fast for writes unless you use SSD cache. Since I’m running on budget gear and want consistent speeds, I stuck with RAID10 for now.
+
+---
+
+## 🔹 Where Btrfs Fits In
+
+Some NAS distros default to **Btrfs** for snapshots and CoW (copy-on-write). But it’s still not as mature as ZFS in heavy RAID use. For my setup, ext4 is simpler and safer.
+
+That said, I might experiment with Btrfs on smaller pools or SSDs later, especially for snapshotting configs.
+
+---
+
+## ✅ My Homelab Storage Journey (So Far)
+
+* **Today:** Trigkey N100 → 4×1TB RAID10 → formatted with ext4.
+* **Next step:** Expand with IronWolf Pro drives, consider migrating to ZFS on Evo X1 for integrity + snapshots.
+* **Future option:** Try Unraid when I start mixing odd drive sizes or want per-disk flexibility.
+
+---
+
+👉 In short: **ext4 fits my current lightweight NAS**, but as my homelab grows, **ZFS will protect my bigger investments**, and **Unraid may be my playground for flexibility**.
+
+
+### Day 11 – \$1,960
+
+Today was a **big spend day**: I picked up **2 × Lexar 870 SSDs for \$600**.
+It felt like a leap, but it’s an investment in reliability and efficiency for where my homelab is headed.
+
+---
+
+## 🔹 Why Lexar Over Samsung 990?
+
+Most people default to **Samsung NVMe drives** like the 980/990 series because of speed benchmarks. But for a homelab — especially one that might evolve into an **AI-focused system** — raw speed isn’t everything.
+
+* **Power efficiency:** Lexar SSDs are tuned for lower idle and sustained power draw. For 24/7 systems like NAS or Unraid arrays, that translates into cooler temps and less wasted energy.
+* **Reliability under load:** Unlike ultra-high-performance consumer NVMes (e.g., Samsung 990 Pro) that chase peak speeds, Lexar focuses on **consistent sustained performance**. That matters more for AI datasets and NAS workloads, where stability is king.
+* **Value-oriented design:** Lexar drives tend to offer a better balance of **endurance (TBW)** and cost, making them attractive for longer-term deployments where drives will constantly read/write.
+
+---
+
+## 🔹 Storage Philosophy – What Belongs Where
+
+Not all data deserves the same type of storage. Here’s how I’m planning mine:
+
+* **HDDs (IronWolf Pro, etc.):**
+
+  * Great for **bulk data** — movies, backups, archival, cold storage.
+  * Cheap per TB, but slower and fragile under sudden power loss.
+
+* **SATA SSDs (like Lexar 870):**
+
+  * Best for **NAS caches, VM storage, system volumes**.
+  * Much faster than HDDs, but without the heat/noise of NVMe.
+
+* **NVMe SSDs (Samsung 980/990, etc.):**
+
+  * Best for **scratch space, AI model training, database indexing**.
+  * Incredible speed, but higher heat and power draw.
+
+* **VRAM (GPU memory):**
+
+  * Used for **AI inference and rendering**.
+  * Ephemeral — wiped on power loss, but essential for real-time workloads.
+
+---
+
+## 🔹 Why Lexar Works Well with Unraid
+
+Unraid thrives on mixing different drives, and Lexar SSDs slot in perfectly:
+
+* As a **cache drive**, they buffer fast writes before moving them to slower HDD arrays.
+* As a **VM/dockers pool**, they provide reliable low-latency storage for apps, databases, or AI containers.
+* Their efficiency means **less stress on UPS runtime** in case of power outages — important for homelab resilience.
+
+---
+
+## 🔹 The Values Behind Lexar
+
+Lexar has always branded itself around **reliability, accessibility, and endurance**. Unlike consumer gaming SSDs that market maximum read/write speeds, Lexar’s pitch is:
+
+* **Consistent performance over flashy peaks**.
+* **Durability for 24/7 use cases**.
+* **Affordable pro-grade hardware** for creators, engineers, and homelab enthusiasts.
+
+For me, those values align with what I want: a setup that runs **quiet, cool, and stable** while I experiment with NAS, AI inference, and Unraid services.
+
+---
+
+## 🔹 Why It Matters for AI
+
+AI workloads thrive on **predictability** — the ability to stream datasets in and out of storage without bottlenecks or overheating. Lexar SSDs:
+
+* Provide **stable I/O throughput**, reducing training/inference hiccups.
+* Save energy, which matters when GPUs are already consuming most of the power budget.
+* Fit well in **edge-AI setups** or small servers where efficiency > chasing PCIe 5.0 bragging rights.
+
+---
+
+---
+
+## Day 12 – \$2,980—Evo X1 Joins the Homelab
+
+Today was a milestone—**I invested \$1,020** into upgrading my setup with the **GMKtec Evo X1 mini PC**. In a Google Sheet benchmarking "price-to-performance", this model impressively scored **3rd highest**, confirmed by the sheet you shared ([Google Docs][1]).
+
+### What Makes the Evo X1 Shine:
+
+* **AMD Ryzen AI 9 HX 370 APU** – 12 cores, 24 threads, and turbo up to 5.1 GHz.
+* **Integrated Radeon 890M GPU** – 16 compute units, decent for light graphics and compact workloads
+* **64 GB onboard LPDDR5X (8,000 MHz)** — seriously healthy for homelab multitasking 
+* **1 TB PCIe 4.0 NVMe SSD**, with dual M.2 slots (expandable up to 8 TB)
+* **Connectivity**: Dual 2.5 GbE, Wi-Fi 6, USB4, triple 8K display outputs (HDMI 2.1, DP 2.1), and Oculink — so it’s future-ready
+* **Smart cooling & power modes**, with Quiet (35 W), Balance (54 W), and Performance (65 W) presets, plus VRAM allocation option
+
+---
+
+### Why GMKtec? The Backstory & Why Evo X1 is a Smart Pick for Homelabs
+
+GMKtec—based in Shenzhen—is quietly delivering mini PCs with serious compute power, especially for AI development. The **Evo X1** stands out in their lineup as a capable, compact workhorse. It’s designed for enthusiasts and creators who need robust performance in a small form factor.
+
+Priced under **\$1,000 before shipping**, it’s a notable bargain compared to bigger desktops or upgraded laptops  Its high **price-to-performance** ranking in your spreadsheet validates that it punches well above its weight.
+
+---
+
+### How It Fits into My Homelab
+
+I’m using the Evo X1 as the new compute backbone of the homelab:
+
+* **64 GB RAM and PCIe 4.0 storage** make it ideal for running Unraid VMs, Docker stacks, AI workloads, and home automation services.
+* **Multiple high-speed ports** (2.5 GbE, USB4, m.2, Oculink) give flexibility for NAS expansion, high-speed networking, or eGPU additions.
+* **Performance tuning** (quiet/performance modes) lets me balance noise, power, and thermal limits depending on use.
+
+Basically, it’s like moving from a reliable but modest car (my N100) into a sleek performance EV (Evo X1)—more power when I need it, but still efficient and easy to place.
+
+---
+
+### Quick Recap Table
+
+| Attribute        | Details                                                   |
+| ---------------- | --------------------------------------------------------- |
+| **Price Paid**   | \$1,020                                                   |
+| **CPU**          | AMD Ryzen AI 9 HX 370 (12c/24t)                           |
+| **RAM**          | 64 GB LPDDR5X                                             |
+| **Storage**      | 1 TB PCIe 4.0 NVMe + dual M.2 expandability               |
+| **Connectivity** | 2.5 GbE ×2, Wi-Fi 6, USB4, Oculink, HDMI, DP              |
+| **Modes**        | Quiet (35 W) / Balanced (54 W) / Performance (65 W)       |
+| **Why Bought**   | Excellent price-to-performance value, AI-capable, compact |
+
+---
+
+Ultimately, the Evo X1 pushes my homelab forward—powerful enough for serious workloads, yet efficient and space-savvy enough to keep my setup clean and flexible.
