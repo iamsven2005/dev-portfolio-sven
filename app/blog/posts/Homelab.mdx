@@ -1074,3 +1074,375 @@ Basically, it’s like moving from a reliable but modest car (my N100) into a sl
 ---
 
 Ultimately, the Evo X1 pushes my homelab forward—powerful enough for serious workloads, yet efficient and space-savvy enough to keep my setup clean and flexible.
+
+---
+# Day 13 – \$2,980 Freebie
+$0 Gold-plated Ethernet Patch Cable
+Scrolling through Shopee today, I stumbled upon one of those quirky deals that make online bargain-hunting fun. A **gold-plated Cat 8 SFTP Ethernet cable**—rated 40Gbps, 2000MHz—for just \$5, effectively free after applying a \$5 off voucher. Not bad for a piece of kit that ensures a rock-solid connection when you’re moving big datasets or streaming at low latency. I also poked around some voucher-earning games for extra discounts, though the real temptation of the day wasn’t a cable—it was the thought of finally pulling the trigger on a **CUDA-based GPU**.
+
+---
+
+## Why NVIDIA CUDA Still Reigns Supreme
+
+When it comes to **AI workloads**, not all GPUs are created equal. Yes, there are competitors like **Cambricon** (China’s AI accelerators), **AMD ROCm**, and **Intel GPUs**, but **NVIDIA CUDA GPUs** remain the gold standard for developers, researchers, and even hobbyists.
+
+Here’s why:
+
+1. **CUDA Ecosystem & Libraries**
+
+   * CUDA (Compute Unified Device Architecture) is more than hardware—it’s a mature **software stack**.
+   * Frameworks like **TensorFlow, PyTorch, MXNet** have deep CUDA support.
+   * NVIDIA’s **cuDNN**, **TensorRT**, and **RAPIDS** provide ready-to-use optimizations. Competitors simply can’t match the breadth of libraries and community support.
+
+2. **Developer Community & Stability**
+
+   * Tens of thousands of tutorials, GitHub repos, and Stack Overflow threads exist for CUDA.
+   * AMD’s ROCm is improving, but driver stability and ecosystem maturity remain weak points.
+   * Cambricon is niche (mainly in Chinese data centers), and Intel GPUs are still finding their place.
+
+3. **Hardware Features**
+
+   * CUDA GPUs integrate **Tensor Cores** (for AI matrix math), **RT Cores** (for rendering), and highly optimized memory pipelines.
+   * NVIDIA has long experience in balancing **FP32, FP16, INT8, and now FP8 precision**, making training and inference faster and more power-efficient.
+
+---
+
+## What Specs to Look Out For in an AI GPU
+
+When shopping for a CUDA-capable GPU, raw teraflops aren’t the only metric. Consider these:
+
+* **CUDA Core Count** → More cores = more parallel compute.
+* **Tensor Core Support** → Crucial for deep learning (introduced in Volta → improved in Ampere, Hopper, Blackwell).
+* **VRAM Size & Bandwidth** → For large models, 16GB+ is recommended; HBM memory is a big plus.
+* **PCIe vs NVLink** → For scaling beyond one GPU, interconnect speed matters.
+* **Power Efficiency** → Newer architectures (like Ada Lovelace & Blackwell) deliver more performance per watt.
+
+---
+
+## Enter Blackwell: NVIDIA’s Next Big Leap
+
+If **Hopper** (H100) was NVIDIA’s answer to AI’s explosive growth, then **Blackwell** (B100/B200) is the evolution for the next era:
+
+* Built on a **custom TSMC 4N process** with cutting-edge packaging.
+* **FP4 precision support** for ultra-efficient AI inference.
+* **Next-gen NVLink (900 GB/s+)** for massive multi-GPU training.
+* More **Tensor Cores per SM**, boosting both training throughput and inference speed.
+* Targeted squarely at **AI hyperscalers, LLMs, and generative AI workloads**.
+
+In short, Blackwell isn’t just about more speed—it’s about redefining **scalability and efficiency** in AI compute.
+
+---
+
+## Final Thoughts
+
+Today I scored a practically free Ethernet cable, but the real takeaway is this: while cables and vouchers are fun, the **GPU choice** is what shapes the future of any AI project. **NVIDIA CUDA GPUs** continue to dominate because of their software ecosystem, community support, and forward-looking architectures like **Blackwell**.
+
+Whether it’s tinkering with older cards like the GT 640 or GT 730 I have lying around, or dreaming of the power of a future **5070 Ti** or even a **B200 Blackwell**, one truth stands: in AI, the right GPU isn’t just hardware—it’s the gateway into an entire ecosystem.
+
+
+---
+
+# Day 14 – \$2,980 2nd Freebie
+
+Today’s “freebie hunt” on Shopee landed me yet another useful cable — a **\$0 HDMI cable** after vouchers. Between yesterday’s Cat 8 Ethernet and today’s HDMI, I think my collection of wires is reaching “mission complete.” But that got me thinking: I’ve got all the cables for displays and networking… what about something more exotic, like hooking up an **Oculink cable to a GPU**?
+
+---
+
+## What is Oculink?
+
+**Oculink (SFF-8612/8611)** is a compact cable standard developed by PCI-SIG. It’s designed to carry **PCIe lanes directly**, without the overhead of additional protocols. Think of it as a **slimmed-down PCIe extension cable** that’s perfect for compact PCs, servers, and eGPU builds.
+
+### Why Oculink Helps vs Thunderbolt
+
+* **Direct PCIe link** → Oculink carries **PCIe 4.0 ×4** directly, giving \~8 GB/s of raw bandwidth. Thunderbolt 3/4, while capable of 40 Gbps, has protocol overhead that reduces effective PCIe bandwidth (usually PCIe 3.0 ×4, \~3.5 GB/s).
+* **Lower latency** → Since Oculink doesn’t wrap PCIe traffic inside Thunderbolt protocol layers, communication between CPU ↔ GPU is faster.
+* **Cheaper** → Oculink risers and cables cost a fraction of Thunderbolt enclosures.
+* **Simplicity** → No extra chipset required; it’s a straight shot PCIe tunnel.
+
+In short: **Thunderbolt is great for plug-and-play universality**, but **Oculink is better for raw GPU performance and cost-effectiveness**.
+
+---
+
+## Connecting Oculink to a GPU
+
+There are several ways to connect Oculink to a desktop GPU:
+
+1. **Oculink-to-PCIe Riser Board (Budget Option)**
+
+   * Cable plugs into riser/dock → PCIe x16 slot.
+   * Needs 24-pin ATX + GPU PCIe power.
+   * Most flexible, cheapest.
+
+2. **Oculink-to-M.2 Adapter**
+
+   * Converts an NVMe slot into Oculink.
+   * Great for laptops and mini-PCs.
+
+3. **Thunderbolt-to-Oculink Hybrids**
+
+   * Convert Thunderbolt into Oculink.
+   * Useful if your host only supports Thunderbolt, but pricier.
+
+4. **Direct Oculink GPU Boxes**
+
+   * Purpose-built GPU enclosures.
+   * Sleek but often expensive.
+
+---
+
+## Other eGPU Models & Docks
+
+* **ADGP1** → Oculink dock, but **not CUDA-capable**. Best for display, not compute.
+* **AG01** → Compact dock, but **very limited supply**.
+* **DEG1** → Requires a separate PSU. By the time you buy cables + power, the value disappears.
+* **Premium Thunderbolt eGPUs** (Razer Core, AORUS Gaming Box, Sonnet Breakaway Box) → Complete packages with PSU + cooling, but very expensive (\$300–\$500 without GPU).
+
+---
+
+## Why Budget Adapters Are Usually Enough
+
+* Oculink risers deliver **full PCIe 4.0 ×4 bandwidth** — same as premium boxes.
+* Latency is lower than Thunderbolt enclosures.
+* At \~\$30, they’re a fraction of the cost.
+
+Unless you need polished hot-plug support, a **riser + good PSU** is all you really need.
+
+---
+
+## Why People Choose Thermalright PSUs
+
+Pairing an Oculink riser with a reliable PSU is the best way to stabilize an eGPU build. **Thermalright PSUs** stand out because:
+
+* **ATX 3.1 & PCIe 5.1 ready** → native 12VHPWR cables for RTX 40/50 GPUs.
+* **80+ Gold efficiency** → stable voltage and cooler operation.
+* **Fully modular** → no clutter, only use the cables you need.
+* **Strong reputation** → known for cooling and rock-solid stability.
+
+---
+
+## Final Thoughts
+
+A free HDMI cable today reminded me that while I’ve got the basics covered, the real leap comes from **connecting GPUs externally**. Oculink offers a **clean, direct PCIe link** that outperforms Thunderbolt in speed, latency, and price. While premium eGPU boxes look sleek, the budget **Oculink riser + Thermalright PSU combo** remains the smartest, most reliable path for anyone experimenting with external CUDA power.
+
+---
+
+# Day 15 – \$3,000 Last Freebie and a Disappointment
+
+Today’s “haul” ended up being a mixed bag. I scored a **\$0 dust blower ball** (those squeeze bulbs that puff air to clean electronics), but my real buy — a **\$60 Eaton UPS 5A (1200VA/650W)** — never showed up. Lost in transit, refunded, but still a disappointment. Backup power is critical, so I’ll grab another later.
+
+Thinking about resilience got me reflecting on something similar in the network world: how we expose and secure our services. That led me to **port forwarding, tunnels, and Tailscale**.
+
+---
+
+## Cloudflare Tunnels, ngrok, and Tailscale
+
+If you’ve ever tried to run an app from home, you’ve probably looked at **Cloudflare Tunnels** or **ngrok**. Here’s how they stack up against **Tailscale Funnel**:
+
+### **Cloudflare Tunnels**
+
+* Strength: Extremely polished for exposing web apps to the public internet. Comes with **DDoS protection**, custom domains, SSL, and Cloudflare’s massive global edge network.
+* Limitation: Works best for **HTTP/HTTPS services**. Anything beyond web traffic requires more setup. You’re still trusting a third-party edge for routing.
+
+### **ngrok**
+
+* Strength: Great for developers. Instant, temporary public URLs to demo apps, APIs, or webhooks.
+* Limitation: Free tier is restrictive (random URLs, session timeouts). Not meant for always-on homelabs.
+
+### **Tailscale Funnel**
+
+* Strength: Not just for web apps — it exposes services directly from your **private mesh VPN**. TLS and identity-based ACLs are built in. Funnel integrates smoothly with your **existing Tailnet**.
+* Limitation: Still newer than Cloudflare Tunnels; less “enterprise edge features” but more homelab-friendly.
+
+👉 In practice:
+
+* **Cloudflare Tunnels** = best if you’re running a blog, portfolio, or service for the public internet.
+* **ngrok** = best for short-term developer demos.
+* **Tailscale Funnel** = best for **homelabs**, because you get *LAN-like access + optional external access*, all identity-secured.
+
+That’s why hobbyists and self-hosters lean heavily toward **Tailscale** — it replaces clunky port forwarding *and* adds VPN functionality for free.
+
+---
+
+## Using Tailscale Traffic Routing for the Whole Network
+
+One of Tailscale’s most underrated features is **exit nodes and subnet routing**. This lets a single machine act like a **gateway** for your entire LAN.
+
+For example, your **Intel N100 box** could serve as:
+
+* **DHCP server** → assigning IPs to every device on your network.
+* **AD/DNS server** → running Samba/Active Directory for authentication.
+* **Tailscale exit node** → routing all your LAN’s internet traffic through it.
+* **Subnet router** → exposing your LAN devices to your Tailnet, even if they don’t run Tailscale.
+
+### Feasibility
+
+* The N100 has **low power draw but plenty of performance** for routing, DNS, and AD roles.
+* Tailscale’s routing features would let you:
+
+  * Access printers, NAS boxes, IoT devices **from anywhere**, without port forwarding.
+  * Route **all traffic through the N100** for unified filtering, logging, or even ad-blocking (Pi-hole style).
+* Firewall need is reduced: **ACLs + central monitoring** give you identity-aware rules at the VPN layer, not just IP-based filtering.
+
+In other words: your N100 could effectively become the **router + domain controller + VPN concentrator** for your entire network. All while staying simple to manage.
+
+---
+
+## Final Thoughts
+
+Today I lost a UPS, but I gained perspective: just like hardware redundancy, **network resilience is about architecture, not just devices**.
+
+* **Cloudflare Tunnels** and **ngrok** are great for specific use cases, but **Tailscale** shines for homelabs.
+* It replaces port forwarding, acts as a secure VPN, and with Funnel, it even handles public hosting.
+* With features like **exit nodes and subnet routing**, even a small N100 box can graduate into being your **LAN’s DHCP, DNS/AD, and secure gateway**.
+
+Instead of opening ports and hardening firewalls, you simply extend your LAN securely with Tailscale. That’s why so many homelabbers choose it: it feels like networking reimagined for the personal era of cloud-native.
+
+---
+
+# Day 16 – \$3,150 I Am Big Fan of Yours
+
+Today’s build upgrades were all about **power, cooling, and connectivity**. I picked up a **\$2 PWM hub** to manage fans, a **\$100 Thermalright KG750 PSU** for stable power, and a **\$48 Oculink dock with cable** to slot in another GPU. The theme here? Keeping things tidy, cool, and efficient — because if there’s one thing I’ve learned, it’s that messy wires and poor cooling kill performance, especially when you start stacking drives.
+
+---
+
+## Cooling: More Than Just Fans
+
+When people think cooling, they usually think of CPU or GPU temps. But drives — especially HDDs and enterprise SSDs — also generate heat that can shorten lifespan if ignored.
+
+* **HDDs** → run best at 30–40°C. Too hot and you risk head crashes, too cold and lubrication stiffens.
+* **SSDs** → NVMe drives can easily hit 70°C+ under sustained load, causing throttling.
+
+This is where a **PWM hub** shines. Instead of plugging fans randomly into the motherboard, the hub centralizes control:
+
+* **Dynamic speed scaling** → fans ramp up only when temps rise.
+* **Targeted airflow** → you can point fans across drive cages or M.2 heatsinks.
+* **Cable reduction** → fewer messy wires snaking around, improving airflow further.
+
+In short: proper fan control isn’t just about silence — it’s about giving drives the airflow they need, only when they need it.
+
+---
+
+## Wires: The Hidden Cooling Factor
+
+Messy cables do more than look bad — they **block airflow**. Optimizing wires is almost free performance:
+
+* **Use modular PSUs (like the Thermalright KG750)** → only plug in the cables you actually need.
+* **Route SATA and power cables behind the tray** → reduces clutter near drives.
+* **Shorter cables for Oculink/PCIe risers** → less mess, fewer bends, and cleaner airflow.
+* **Bundle with Velcro straps** instead of zipties → easier to reconfigure when adding drives.
+
+A clean wiring job doesn’t just make you proud when you peek inside — it directly improves thermals by giving fans unobstructed paths.
+
+---
+
+## Drives: Getting the Most from Cooling + Wires
+
+With multiple drives, heat builds fast. Here’s how to optimize:
+
+1. **Stacking HDDs**
+
+   * Always leave a small gap if possible.
+   * Position a low-RPM 120mm/140mm fan to blow directly across them.
+
+2. **NVMe SSDs**
+
+   * Use heatsinks or thermal pads if they’re bare.
+   * Avoid cramming multiple drives under a single heatsink without airflow.
+
+3. **External GPU/Drive setups via Oculink**
+
+   * Oculink docks add flexibility, but don’t forget they still need cooling.
+   * Keep GPU/drive risers in open airflow paths, not buried in cable jungles.
+
+4. **Monitor temps**
+
+   * Tools like `smartctl`, CrystalDiskInfo, or even NAS dashboards let you track drive health.
+   * If drives creep past 50°C, airflow needs adjustment.
+
+---
+
+## Final Thoughts
+
+Today’s upgrades — a **PWM hub, Thermalright PSU, and Oculink dock** — might not sound flashy, but they’re the foundation of a system that runs cool and clean. Optimizing **cooling and wires** isn’t just about aesthetics; it directly affects **drive longevity, performance stability, and serviceability**.
+
+In the end, it’s simple: drives want consistent airflow, GPUs want clean power, and your sanity wants tidy cables. Nail those three, and you’ll get a rig that’s quiet, efficient, and ready to scale without cooking your data.
+
+---
+
+# Day 17 – \$4,000 I Am Poor
+
+Well, it happened. I blew the budget and ended this whole run with an **RTX 5070 Ti**. Wallet says “I am poor,” but the mind says, “time to train and serve some models.” Naturally, my first stop will be **LM Studio** — running large language models locally. The challenge: getting the most out of CPU, NPU, and GPU together without melting hardware or drowning in memory errors.
+
+---
+
+## CPU, NPU, GPU: Who Does What in LM Studio?
+
+* **CPU (Central Processing Unit)** → Orchestrates data flow, token batching, and fallback inference.
+* **NPU (Neural Processing Unit)** → Efficient for low-power inference (newer Intel/ARM chips), but limited ecosystem.
+* **GPU (Graphics Processing Unit)** → The star of the show for AI. CUDA + Tensor Cores handle matrix math at scale, but VRAM limits how big a model you can run.
+
+LM Studio can flexibly assign workloads, making it possible to use each processor where it excels.
+
+---
+
+## Reducing Model Size
+
+Big models choke hardware unless optimized. Techniques include:
+
+* **Quantization (8-bit, 4-bit)** → Shrinks model memory use dramatically.
+* **Pruning** → Trims unimportant weights for efficiency.
+* **LoRA adapters** → Lightweight fine-tunes without ballooning model size.
+* **CPU/GPU offloading** → Offload non-critical layers to RAM when VRAM is tight.
+
+---
+
+## Why VRAM Matters in AI Serving
+
+VRAM is the GPU’s working memory:
+
+* **7B model, FP16** → \~14 GB.
+* **7B, 4-bit quantized** → \~4 GB.
+* **13B, FP16** → \~26 GB.
+* **13B, 4-bit quantized** → \~8 GB.
+
+With the RTX 5070 Ti’s **16 GB VRAM**, quantized 13B models run comfortably, and even 34B can run with smart offloading. But once VRAM is exceeded, the GPU constantly swaps data to system RAM — introducing **slowdowns**.
+
+---
+
+## Storage: Why an Efficient SSD Like the Lexar NM790 Helps
+
+This is where a **fast, efficient SSD** comes in. The **Lexar NM790 4TB** is a great example:
+
+* **High endurance & low power draw** → Keeps heat low and power bills friendly, perfect for always-on AI rigs.
+* **PCIe Gen 4 NVMe speeds (up to 7400 MB/s read)** → Rapidly streams model weights into VRAM.
+* **Large capacity (4 TB)** → Enough room for dozens of quantized GGUF models, LoRA adapters, and datasets.
+* **Consistency under load** → Unlike cheap DRAM-less drives, the NM790 maintains speed during long model loads and swaps.
+
+For LM Studio, this means:
+
+* Faster **model load times** (no waiting minutes to boot a 13B).
+* Smoother **CPU/GPU offloading**, since paging data from SSD is far quicker than from a slow drive.
+* Room to store multiple versions of models (7B, 13B, 34B) and experiment without constant shuffling.
+
+An efficient SSD becomes the **bridge** between system RAM and GPU VRAM — minimizing bottlenecks when models don’t fit fully in VRAM.
+
+---
+
+## Blackwell: The Next Frontier
+
+NVIDIA’s upcoming **Blackwell GPUs** are designed with this exact ecosystem in mind:
+
+* **FP4/FP8 precision** → Shrinks model memory needs even further.
+* **Larger VRAM pools** → For consumer cards, more GDDR; for enterprise, HBM stacks.
+* **Next-gen Tensor Cores** → Optimized for transformers and quantized inference.
+* **Efficiency** → More performance per watt, critical for long AI sessions.
+
+Together with fast NVMe storage and smarter software frameworks, Blackwell will push local AI even further.
+
+---
+
+## Final Thoughts
+
+\$4,000 later, I’m broke but grinning with an **RTX 5070 Ti** humming in my setup. The lesson here: running AI locally is about more than just the GPU. It’s about balancing CPU/NPU/GPU roles, reducing model size smartly, having enough VRAM to breathe, and pairing it all with a **reliable SSD like the Lexar NM790 4TB** to keep data flowing.
+
+Blackwell may change the game again, but with the right mix of quantization, VRAM, and SSD speed, local AI is already within reach for homelabbers like us.
