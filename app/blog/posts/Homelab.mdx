@@ -1368,9 +1368,9 @@ In the end, it’s simple: drives want consistent airflow, GPUs want clean power
 
 ---
 
-# Day 17 – \$4,000 I Am Poor
+# Day 17 – \$3,500 I Am Poor
 
-Well, it happened. I blew the budget and ended this whole run with an **RTX 5070 Ti**. Wallet says “I am poor,” but the mind says, “time to train and serve some models.” Naturally, my first stop will be **LM Studio** — running large language models locally. The challenge: getting the most out of CPU, NPU, and GPU together without melting hardware or drowning in memory errors.
+Well, it happened. I blew the budget and ended this whole run with an **RTX 5060 Ti**. Wallet says “I am poor,” but the mind says, “time to train and serve some models.” Naturally, my first stop will be **LM Studio** — running large language models locally. The challenge: getting the most out of CPU, NPU, and GPU together without melting hardware or drowning in memory errors.
 
 ---
 
@@ -1404,7 +1404,13 @@ VRAM is the GPU’s working memory:
 * **13B, FP16** → \~26 GB.
 * **13B, 4-bit quantized** → \~8 GB.
 
-With the RTX 5070 Ti’s **16 GB VRAM**, quantized 13B models run comfortably, and even 34B can run with smart offloading. But once VRAM is exceeded, the GPU constantly swaps data to system RAM — introducing **slowdowns**.
+With the RTX 5060 Ti’s **12 GB VRAM**, quantized 13B models are still possible, but you’ll need offloading to system RAM or SSD. In practice:
+
+* **7B quantized models** → run comfortably.
+* **13B quantized** → fits, but tight (expect occasional RAM/SSD swaps).
+* **34B+ models** → only feasible with heavy offloading.
+
+Once VRAM is exceeded, the GPU constantly swaps data to system RAM — introducing **slowdowns**.
 
 ---
 
@@ -1438,10 +1444,53 @@ NVIDIA’s upcoming **Blackwell GPUs** are designed with this exact ecosystem in
 
 Together with fast NVMe storage and smarter software frameworks, Blackwell will push local AI even further.
 
+## 1. RTX 5060 Ti vs 5070 Ti (AI workloads)
+
+| Spec            | RTX 5060 Ti              | RTX 5070 Ti         | AI Impact                                                                                                                                  |
+| --------------- | ------------------------ | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| VRAM            | **12 GB GDDR6**          | **16 GB GDDR6X**    | More VRAM = run bigger models without offloading. 16 GB lets you fit quantized 13B models fully in GPU; 12 GB often needs SSD/RAM offload. |
+| Memory Bus      | 192-bit                  | 256-bit             | Wider bus = higher memory bandwidth, helps in graphics and some AI, but not as critical as VRAM size for LLM inference.                    |
+| Bandwidth       | \~432 GB/s               | \~672 GB/s          | Better for games/rendering; in AI, bandwidth helps but isn’t the bottleneck unless running at FP16/full precision.                         |
+| CUDA Cores      | Fewer (mid-tier)         | More (upper-mid)    | More parallelism = faster throughput.                                                                                                      |
+| Typical Wattage | \~200W                   | \~250W              | 5070 Ti runs hotter and draws more power.                                                                                                  |
+| Price (est.)    | Cheaper, more accessible | Higher upfront cost | 5070 Ti gives more headroom for future-proofing.                                                                                           |
+
+👉 **Bottom line:** For LLMs, VRAM size is the gating factor. If a model doesn’t fit in VRAM, performance collapses due to SSD/RAM offloading. The 5070 Ti’s extra 4 GB VRAM often unlocks whole model tiers (like 13B quantized) without slowdowns.
+
 ---
+
+## 2. Why VRAM > Bus Size (for value in AI)
+
+* **VRAM determines capacity**, i.e., *what models you can run at all*.
+
+  * 7B → fits in both 12 GB and 16 GB.
+  * 13B quantized → fits cleanly in 16 GB, but may struggle in 12 GB.
+  * 34B → possible only with heavy offloading on both, but easier with 16 GB.
+
+* **Bus size = bandwidth**, i.e., *how fast data moves between GPU core and VRAM*.
+
+  * Important for gaming/rendering (textures, frames per second).
+  * For LLM inference, models are read sequentially from VRAM. Once weights are in VRAM, the GPU does mostly compute (matrix multiplies).
+  * So bus width gives some uplift, but not nearly as much impact as *having enough VRAM in the first place*.
+
+* **Cost vs benefit:**
+
+  * Paying extra for **bus width** helps mostly with graphics workloads.
+  * Paying extra for **VRAM** lets you jump to the next model tier (e.g., 13B vs 7B), which directly changes what’s possible in LM Studio.
+  * That’s why you’d value the 5070 Ti: not for the 256-bit bus, but for the 16 GB VRAM.
+
+---
+
+✅ In AI inference:
+**VRAM = capacity ceiling.**
+**Bus width = performance polish.**
+
+---
+
+Do you want me to also add a **visual “model fit chart”** (7B, 13B, 34B vs 12 GB and 16 GB VRAM) so it’s clear what each GPU tier enables?
 
 ## Final Thoughts
 
-\$4,000 later, I’m broke but grinning with an **RTX 5070 Ti** humming in my setup. The lesson here: running AI locally is about more than just the GPU. It’s about balancing CPU/NPU/GPU roles, reducing model size smartly, having enough VRAM to breathe, and pairing it all with a **reliable SSD like the Lexar NM790 4TB** to keep data flowing.
+\$3,500 later, I’m broke but grinning with an **RTX 5060 Ti** humming in my setup. The lesson here: running AI locally is about more than just the GPU. It’s about balancing CPU/NPU/GPU roles, reducing model size smartly, having enough VRAM to breathe, and pairing it all with a **reliable SSD like the Lexar NM790 4TB** to keep data flowing.
 
 Blackwell may change the game again, but with the right mix of quantization, VRAM, and SSD speed, local AI is already within reach for homelabbers like us.
