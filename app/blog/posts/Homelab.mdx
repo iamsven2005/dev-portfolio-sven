@@ -507,7 +507,7 @@ For a NAS that will rebuild, scrub, and serve mixed workloads, **CMR is the safe
 I went with **Seagate IronWolf Pro** because it hits the NAS checklist without drama:
 
 * **All-CMR in this tier:** No surprise SMR models sneaking into arrays that need steady random writes and clean rebuilds.
-* **NAS-tuned firmware (AgileArray):** Optimized for multi-bay vibration, RAID behavior, and quick error handling—exactly what you want during rebuilds.
+* **NAS-tuned firmware (AgileArray):** Optimised for multi-bay vibration, RAID behaviour, and quick error handling—exactly what you want during rebuilds.
 * **Vibration & 24/7 ratings:** Built for always-on enclosures; RV sensors and higher endurance/workload ratings than typical desktop drives.
 * **IronWolf Health Management:** Extra telemetry/health hooks (works best with popular NAS OSes), useful for pre-fail warnings.
 * **Rescue Data Recovery (often included for a couple of years):** Not a plan to fail, but a real backstop if the worst happens.
@@ -520,7 +520,7 @@ Bottom line: Seagate’s **IronWolf Pro** gives me predictable CMR performance, 
 I picked up **18 TB** at **\~S\$24/TB** — and here’s why that capacity makes sense:
 
 1. **Best value curve right now:** Below 16 TB, \$/TB is usually worse; above 18–20 TB, you start paying early-adopter tax.
-2. **CMR + sanity:** Many 18 TB SKUs are CMR, so I get NAS-friendly behavior without stepping into newer HAMR pricing.
+2. **CMR + sanity:** Many 18 TB SKUs are CMR, so I get NAS-friendly behaviour without stepping into newer HAMR pricing.
 3. **Rebuild risk vs time:** Bigger drives mean longer rebuilds (and higher second-failure risk). **18 TB is still manageable** compared to 20–22 TB, especially on modest CPUs like my N100.
 4. **Planning headroom:** With 18 TB units, even a small 3-bay gives real, future-proof capacity (and I can still move to ZFS RAIDZ2 later if I expand).
 
@@ -1481,12 +1481,261 @@ Together with fast NVMe storage and smarter software frameworks, Blackwell will 
 **VRAM = capacity ceiling.**
 **Bus width = performance polish.**
 
----
-
-Do you want me to also add a **visual “model fit chart”** (7B, 13B, 34B vs 12 GB and 16 GB VRAM) so it’s clear what each GPU tier enables?
-
 ## Final Thoughts
 
 \$3,500 later, I’m broke but grinning with an **RTX 5060 Ti** humming in my setup. The lesson here: running AI locally is about more than just the GPU. It’s about balancing CPU/NPU/GPU roles, reducing model size smartly, having enough VRAM to breathe, and pairing it all with a **reliable SSD like the Lexar NM790 4TB** to keep data flowing.
 
 Blackwell may change the game again, but with the right mix of quantization, VRAM, and SSD speed, local AI is already within reach for homelabbers like us.
+
+---
+
+# Day 18 – \$4,700 An Old Friend
+
+## \$1,200, Old Laptop
+
+Five years ago, I picked up an **IdeaPad 514LT7**—an Intel i7 laptop with 16GB of RAM and a 1TB SSD. At the time, it was a beast for a student, and I definitely didn’t hold back. I pushed it hard: dozens of Chrome tabs, spinning up virtual machines for Kali Linux and RHEL, and juggling multiple school projects at once. Naturally, the wear and tear came quickly.
+
+Eventually, **Windows became unbearable** to run on it. I swapped it for Ubuntu as my main drive, which worked fine for about five months before it too started struggling. During my final year projects, I riced it with Arch Linux for the fun of it, but one by one, the hardware began to give way. First the Wi-Fi and Bluetooth modules, and then the performance dips.
+
+Instead of letting it collect dust, I decided to **put the laptop back to work**.
+
+## Repurposing Into a Server
+
+I flashed Ubuntu Server onto it, installed Tailscale for easy networking, and slotted it into my setup. Since my UPS and switch ports were already fully occupied, I connected it via **USB 3.0 to Ethernet**. Surprisingly, it ran decently and found a second life—not as a daily driver laptop, but as a **Coolify server** for hosting my personal projects.
+
+## What is Coolify?
+
+For those unfamiliar, **[Coolify](https://coolify.io/)** is an open-source, self-hostable alternative to platforms like Heroku or Netlify. Think of it as a **PaaS (Platform-as-a-Service) that you own**. Instead of relying on third-party cloud providers to deploy your apps, Coolify gives you a web-based dashboard to:
+
+* Deploy Dockerized apps with just a few clicks
+* Manage databases and services (Postgres, Redis, etc.)
+* Set up domains and SSL automatically
+* Monitor logs and server health
+
+All without needing to manually mess with `docker-compose` files every single time.
+
+## Why Host on Coolify?
+
+While I could have just run my apps with Docker manually, **Coolify makes self-hosting far more manageable**. It reduces the friction of deployment, especially for side projects and experiments. A few reasons it’s perfect for my repurposed laptop:
+
+* **Ease of Use** – The web UI abstracts away the repetitive DevOps work.
+* **Self-Ownership** – I control the server, the apps, and the data. No lock-in.
+* **Resource Friendly** – Even with older hardware, Coolify can efficiently run multiple apps without overloading the system.
+* **Free & Open-Source** – Ideal for someone like me who wants cloud-like convenience without recurring costs.
+
+What used to be a laptop gasping for life under Windows is now quietly humming as a **lightweight PaaS server**.
+
+## Closing Thoughts
+
+There’s a certain satisfaction in **breathing new life into old hardware**. Instead of throwing away a five-year-old laptop, I turned it into something genuinely useful for my workflow. With Coolify, I get the best of both worlds: the fun of self-hosting, and the convenience of modern deployment.
+
+Sometimes, an old friend just needs a new role.
+
+---
+
+# Day 19 – \$4,830 A Failed Hackathon
+
+## \$130, Raspberry Pi 5 (8GB)
+
+As usual, I was browsing Reddit and drooling over all the cool cluster projects people were building with Raspberry Pis. The idea of creating my own little cluster was too tempting to resist—I definitely needed to get my hands on one. At first, I was sold on the **LattePanda series**. The specs looked exactly like what I wanted, and I was ready to make it my next purchase.
+
+And then my phone rang.
+
+A new hackathon had just opened for registration: **SUTD What the Hack**. It was a hardware-focused competition, sponsored by ESP32. Sounded like fun… until we actually started building.
+
+Working with the ESP32 was frustrating. We bounced from trying an **NVIDIA Jetson Xavier**, back down to an ESP32, then over to an RPi. The constant back-and-forth left us exhausted, and in the end, our project collapsed. We failed the hackathon—horribly.
+
+But not everything was wasted. That experience made me appreciate something I had overlooked: just how much **easier it is to work with a Raspberry Pi 5** compared to most other hardware.
+
+---
+
+## Why Raspberry Pi 5 Shines for AI Edge Computing
+
+The Raspberry Pi 5 is more than just a cheap single-board computer—it’s a sweet spot for **AI edge projects**. Here’s why:
+
+### 1. **Plug-and-Play Ecosystem**
+
+Unlike the ESP32, which requires custom toolchains and lots of low-level setup, the RPi 5 feels like a regular computer. Flash an OS, plug in peripherals, and you’re up and running. For hackathons or rapid prototyping, that’s priceless.
+
+### 2. **Solid Performance at Low Power**
+
+With its quad-core ARM Cortex-A76 CPU running up to 2.4GHz and 8GB of RAM, the Pi 5 can handle surprisingly heavy workloads. It’s not a Jetson Xavier powerhouse, but for lightweight AI inference (think image recognition, voice models, or anomaly detection), it’s more than enough—without burning through watts or budget.
+
+### 3. **GPU + AI Acceleration Options**
+
+Out of the box, the Pi 5 has a capable VideoCore VII GPU. But where it really shines is compatibility: you can add accelerators like the **Google Coral USB TPU** or Intel’s **Neural Compute Stick 2**. This means you can offload neural network inference for edge AI tasks without needing expensive boards.
+
+### 4. **Massive Community Support**
+
+AI and ML tutorials for the Pi are everywhere. Whether it’s TensorFlow Lite, PyTorch Mobile, or OpenCV, there’s likely a community-tested guide for running it on a Pi. That’s something Jetson and LattePanda just can’t match in terms of beginner-friendliness.
+
+### 5. **Affordable & Scalable**
+
+At \~\$130 for the 8GB model, it’s accessible enough to buy multiple units and scale into clusters. This makes it perfect not just for one-off edge AI projects but for experimenting with distributed computing.
+
+---
+
+## Comparison: RPi 5 vs ESP32 vs Jetson Xavier vs LattePanda
+
+| Feature             | **Raspberry Pi 5 (8GB)**                                             | **ESP32**                                   | **Jetson Xavier NX**                           | **LattePanda Alpha/Delta**                       |
+| ------------------- | -------------------------------------------------------------------- | ------------------------------------------- | ---------------------------------------------- | ------------------------------------------------ |
+| **CPU**             | Quad-core ARM Cortex-A76, 2.4GHz                                     | Dual-core Xtensa LX6, \~240MHz              | 6-core Carmel ARMv8.2, 1.9GHz                  | Intel Core m3 / Celeron                          |
+| **RAM**             | 8GB LPDDR4X                                                          | \~520KB SRAM                                | 8–16GB LPDDR4                                  | 8GB DDR4                                         |
+| **GPU / AI Accel.** | VideoCore VII GPU, supports Coral TPU / Intel NCS2                   | None (basic I/O MCU)                        | 384-core Volta GPU + 48 Tensor Cores           | Intel UHD GPU, supports external AI accelerators |
+| **Power Draw**      | \~10–15W under load                                                  | <1W                                         | 10–15W idle, up to 30W+                        | 6–15W depending on model                         |
+| **OS / Ecosystem**  | Full Linux distros (Raspberry Pi OS, Ubuntu, Arch, etc.)             | Arduino / ESP-IDF SDK                       | NVIDIA JetPack (Ubuntu-based)                  | Windows 10, Linux                                |
+| **Ease of Use**     | ⭐⭐⭐⭐☆ (plug-and-play, huge community)                                | ⭐⭐☆☆☆ (low-level coding, steep curve)       | ⭐⭐⭐☆☆ (powerful but complex)                   | ⭐⭐⭐☆☆ (PC-like, Windows support)                 |
+| **AI Suitability**  | Great for edge inference with accelerators (e.g., Coral TPU, TFLite) | Very limited (good for sensors/IoT, not AI) | Excellent for heavy AI models (CV, robotics)   | Decent for ML frameworks, but higher cost        |
+| **Cost**            | \~\$130 (8GB)                                                        | \~\$5–\$10                                  | \~\$400–\$600                                  | \~\$400–\$800                                    |
+| **Best Use Case**   | AI at the edge, small clusters, prototyping                          | IoT, sensors, simple MCU projects           | Robotics, computer vision, high-performance AI | Windows/Linux dev, mid-range AI workloads        |
+
+---
+
+### Takeaway
+
+* **RPi 5** = Best balance of **price, performance, and ease of use** → ideal for AI edge computing.
+* **ESP32** = Cheap, ultra-low power → great for IoT, but *not* for AI.
+* **Jetson Xavier** = AI powerhouse → but expensive, power-hungry, and overkill for most.
+* **LattePanda** = PC replacement vibe → flexible, but pricier and less supported for edge AI.
+
+---
+
+## Closing Thoughts
+
+We may have failed miserably at the hackathon, but the lessons stuck. The ESP32 taught me about constraints. The Jetson Xavier showed me raw performance. But the **Raspberry Pi 5 hit the sweet spot**—easy to set up, powerful enough for AI at the edge, and backed by a huge ecosystem.
+
+Sometimes failure teaches you where the real wins are hiding.
+
+---
+
+# Day 20 – \$4,960 Edging the AI
+
+## \$130 Hailo-8 (13 TOPS), An Old USB Stick, A Free Screen
+
+Looks like I’m firmly planted in the **Raspberry Pi ecosystem** for now. With so many libraries and community projects around it, it makes sense—especially when hackathons are increasingly hardware-based and almost always come with an **AI angle**.
+
+I was really tempted by the newer **Hailo-8 26 TOPS** accelerator (\~\$300), but in the end, I went with the **13 TOPS version** for \$130—much friendlier on my budget.
+
+At first, I imagined just spamming the GPIO pins with random projects. But the more I thought about it, the more I realized: every project has different hardware quirks, sensors, and requirements. What remains consistent is the need for **an AI edge node**—a device dedicated to running inference quickly, locally, and efficiently. That’s where the Hailo makes sense.
+
+---
+
+## What is AI Edge Computing?
+
+**AI edge computing** is all about running machine learning models *close to where the data is generated*. Instead of sending images, sensor data, or video streams up to the cloud for processing, you run inference locally—on a Raspberry Pi, Jetson, or a USB accelerator like the Hailo-8.
+
+Benefits of edge AI:
+
+* **Lower Latency** – Real-time responses (critical for robotics, autonomous driving, and security).
+* **Privacy** – Data doesn’t need to leave the device.
+* **Efficiency** – Saves bandwidth and reduces reliance on internet connectivity.
+
+In short: edge computing lets AI happen **here and now**, instead of “out there” in some distant data center.
+
+## How Others Use Hailo in Their Homelabs
+
+I’m not alone in experimenting with the Hailo-8. In the homelab and maker communities, people have been getting creative with these little NPUs:
+
+* **Smart Security Cameras** – Running real-time object detection (people, vehicles, packages) at the edge without sending video to the cloud. Saves bandwidth and adds privacy.
+* **IoT Gateways** – Processing sensor data (temperature, motion, vibration) locally and only forwarding insights instead of raw data.
+* **Media Servers with AI Features** – Adding things like automated face recognition in photo libraries (similar to Synology Moments or Plex AI features) but self-hosted and private.
+* **Robotics & Drones** – Offloading vision tasks (lane detection, obstacle avoidance) to Hailo, freeing the main CPU for navigation and control.
+* **Cluster Nodes** – Some homelabbers slot Hailo sticks into their Raspberry Pi clusters, turning each Pi into an **AI-enabled node** for distributed inference tasks.
+
+The theme is always the same: **speed + privacy + efficiency**. Instead of burning GPU cycles or relying on cloud APIs, the Hailo-8 accelerates inference locally, at a fraction of the power draw.
+
+---
+
+## How This Differs From Self-Hosting an AI Model Like Qwen
+
+Of course, there’s a huge difference between running a **specialized NPU like Hailo** and spinning up a **self-hosted model like Qwen** on your server.
+
+* **Hailo-8 (Edge AI Inference)**
+
+  * Purpose-built for **narrow AI tasks** like image classification, object detection, or speech recognition.
+  * Runs small to medium pre-trained models (often optimized with ONNX or TensorFlow Lite).
+  * Extremely efficient: a few watts of power, no giant VRAM requirements.
+  * Think of it as a **toolbox for edge intelligence**, not a chatbot brain.
+
+* **Qwen or Other Self-Hosted LLMs**
+
+  * Large language models that can generate text, answer questions, or do reasoning.
+  * Require **lots of RAM/VRAM** (e.g., 7B Qwen model needs 16–32GB system RAM minimum).
+  * Flexible and general-purpose, but resource-hungry.
+  * Great for running a local “ChatGPT-like” service, but not suited for real-time sensor or vision tasks.
+
+In short:
+
+* **Hailo** = the scalpel → efficient, precise, task-specific AI at the edge.
+* **Qwen (LLM)** = the Swiss Army knife → powerful general-purpose AI that eats resources.
+
+For a balanced homelab, many enthusiasts actually **use both**:
+
+* NPUs like Hailo for **fast edge inference** (cameras, IoT, robotics).
+* Self-hosted LLMs like Qwen for **conversational AI** or coding assistance.
+
+Together, they cover very different but complementary domains of AI.
+
+---
+
+## The Hailo Series
+
+**Hailo** is an Israeli company specializing in **AI accelerators**—compact chips that deliver massive inference performance at very low power. Their USB and M.2 modules are designed for edge devices like Raspberry Pi, industrial PCs, and embedded systems.
+
+* **Hailo-8 (13 TOPS)** – Entry-level, USB-stick form factor, great for small projects and prototyping.
+* **Hailo-8 (26 TOPS)** – Higher performance variant, better for heavier models or real-time video AI.
+* **Hailo-15** – Newer generation SoC with integrated AI acceleration + image signal processing.
+
+What makes Hailo special is its balance: **low cost, low power draw, and optimized software libraries**, making it easy to integrate into edge devices.
+
+---
+
+## NPU, TPU, CUDA, and VRAM – How It All Fits
+
+There’s a whole alphabet soup of terms when it comes to AI hardware. Let’s break them down:
+
+* **NPU (Neural Processing Unit)**
+
+  * A processor specialized for running neural networks.
+  * Found in accelerators like **Hailo** or mobile chips (e.g., Apple Neural Engine, Qualcomm Hexagon).
+  * Optimized for matrix multiplications, which are at the heart of deep learning.
+
+* **TPU (Tensor Processing Unit)**
+
+  * Google’s version of an NPU.
+  * Designed specifically for TensorFlow and large-scale inference/training.
+  * Available as cloud TPUs, or small edge TPUs (like the **Google Coral USB Stick**).
+
+* **CUDA**
+
+  * Not hardware, but **NVIDIA’s programming framework** that allows developers to run parallel computing workloads on GPUs.
+  * Enables deep learning libraries (like PyTorch or TensorFlow) to take advantage of **NVIDIA GPUs**.
+
+* **VRAM (Video RAM)**
+
+  * The dedicated memory on a GPU.
+  * Determines how large your models and datasets can be loaded at once.
+  * More VRAM = the ability to handle bigger models (e.g., 12GB VRAM can fit a decent-sized LLM, while 2GB struggles).
+
+---
+
+## Bringing It Together
+
+When you put this all together:
+
+* **Raspberry Pi 5** = the general-purpose controller, running Linux, managing apps, sensors, and networking.
+* **Hailo-8 NPU** = the specialized accelerator that runs AI inference at the edge efficiently.
+* **CUDA GPUs** (if in a bigger setup) = handle training or heavier compute tasks in a more flexible but power-hungry way.
+* **VRAM** = the fuel tank that decides how big your AI models can be.
+
+In my setup, the **Hailo-8 is the edge enabler**. It gives me the ability to run AI models faster than the Pi 5 could alone, while staying compact, efficient, and hackathon-ready.
+
+---
+
+## Closing Thoughts
+
+Sometimes, the best investment isn’t in raw power, but in **modularity and balance**. By adding a Hailo-8 to my Raspberry Pi ecosystem, I now have an AI edge node that’s portable, efficient, and flexible enough for whatever the next hackathon throws at me.
+
+It’s not just about having more TOPS—it’s about having the **right tools at the right edge**.
+
+---
