@@ -238,7 +238,7 @@ Some to give you guys some context here is what raiding means in "My World"
 
 - ⚡ RAID Levels Explained
 
-### RAID 0 – **Striping**
+### RAID `0` – **Striping**
 
 - **How it works:** Splits data across 2+ drives.
 - **Pros:** Fastest read/write speed, full storage capacity.
@@ -276,7 +276,7 @@ Some to give you guys some context here is what raiding means in "My World"
 
 ### RAID 10 – **Striping + Mirroring**
 
-- **How it works:** Combines RAID 1 and 0 (4+ drives).
+- **How it works:** Combines RAID 1 and `0` (4+ drives).
 - **Pros:** Fast + redundant, quick rebuilds.
 - **Cons:** 50% efficiency, needs more drives.
 - **Use case:** High-performance setups where uptime + speed both matter (databases, VMs).
@@ -355,7 +355,7 @@ Some to give you guys some context here is what raiding means in "My World"
 
 I mnted seagate to /mnt, set fstab as service
 I then forgot about it and added 5 more disks, tried a raid 10, of course, it wouldn't work.
-I thought the tailscale issue, so I went to 0 superblock. The UUID of the disk surely changes.
+I thought the tailscale issue, so I went to `0` superblock. The UUID of the disk surely changes.
 I then proceeded to make NTFS of it, and it confirmed fail, but Idk why (conflict proc), then I tried sudo reboot cause of tailscale.
 fstab confirm crash the whole pc. Now remember by tailscale routes through nas a dhcp, so whole lan kenna crash.
 Now I panic because no lan, no outbound. Then I understood why. Wasted whole day but using raid 5 now waiting for 9.9 sales. Shifted homelab from living room because I have singtel wifi for a reason.
