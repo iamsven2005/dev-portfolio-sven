@@ -1,24 +1,25 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { MDXRemote } from 'next-mdx-remote/rsc'
-import { highlight } from 'sugar-high'
-import React from 'react'
-import remarkGfm from 'remark-gfm'
+import Link from "next/link"
+import Image from "next/image"
+import { MDXRemote } from "next-mdx-remote/rsc"
+import { highlight } from "sugar-high"
+import React from "react"
 
+// Programmatic <Table data={...}/> component
 function Table({ data }: any) {
-  let headers = data.headers.map((header: any, index: any) => (
+  const headers = data.headers.map((header: any, index: number) => (
     <th key={index}>{header}</th>
   ))
-  let rows = data.rows.map((row: any, index: any) => (
+
+  const rows = data.rows.map((row: any, index: number) => (
     <tr key={index}>
-      {row.map((cell: any, cellIndex: any) => (
+      {row.map((cell: any, cellIndex: number) => (
         <td key={cellIndex}>{cell}</td>
       ))}
     </tr>
   ))
 
   return (
-    <table>
+    <table className="border-collapse border border-gray-300 w-full text-sm my-4">
       <thead>
         <tr>{headers}</tr>
       </thead>
@@ -27,10 +28,11 @@ function Table({ data }: any) {
   )
 }
 
+// Custom link renderer
 function CustomLink(props: any) {
-  let href = props.href
+  const href = props.href
 
-  if (href.startsWith('/')) {
+  if (href.startsWith("/")) {
     return (
       <Link href={href} {...props}>
         {props.children}
@@ -38,44 +40,48 @@ function CustomLink(props: any) {
     )
   }
 
-  if (href.startsWith('#')) {
+  if (href.startsWith("#")) {
     return <a {...props} />
   }
 
   return <a target="_blank" rel="noopener noreferrer" {...props} />
 }
 
+// Rounded <Image />
 function RoundedImage(props: any) {
   return <Image alt={props.alt} className="rounded-lg" {...props} />
 }
 
+// Syntax-highlighted <code>
 function Code({ children, ...props }: any) {
-  let codeHTML = highlight(children)
+  const codeHTML = highlight(children)
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
 }
 
-function slugify(str: any) {
+// Utility: slugify for headings
+function slugify(str: string) {
   return str
     .toString()
     .toLowerCase()
-    .trim() // Remove whitespace from both ends of a string
-    .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(/&/g, '-and-') // Replace & with 'and'
-    .replace(/[^\w\-]+/g, '') // Remove all non-word characters except for -
-    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/&/g, "-and-")
+    .replace(/[^\w\-]+/g, "")
+    .replace(/\-\-+/g, "-")
 }
 
-function createHeading(level: any) {
+// Dynamic heading creator
+function createHeading(level: number) {
   const Heading = ({ children }: any) => {
-    let slug = slugify(children)
+    const slug = slugify(children)
     return React.createElement(
       `h${level}`,
       { id: slug },
       [
-        React.createElement('a', {
+        React.createElement("a", {
           href: `#${slug}`,
           key: `link-${slug}`,
-          className: 'anchor',
+          className: "anchor",
         }),
       ],
       children
@@ -83,11 +89,11 @@ function createHeading(level: any) {
   }
 
   Heading.displayName = `Heading${level}`
-
   return Heading
 }
 
-let components = {
+// Components map for MDX
+const components = {
   h1: createHeading(1),
   h2: createHeading(2),
   h3: createHeading(3),
@@ -98,7 +104,7 @@ let components = {
   a: CustomLink,
   code: Code,
 
-  // Override MDX default table elements
+  // Styled Markdown tables
   table: (props: any) => (
     <table
       className="border-collapse border border-gray-300 w-full text-sm my-4"
@@ -110,28 +116,21 @@ let components = {
   ),
   tr: (props: any) => <tr className="even:bg-gray-50" {...props} />,
   th: (props: any) => (
-    <th
-      className="border border-gray-300 px-3 py-2 text-left"
-      {...props}
-    />
+    <th className="border border-gray-300 px-3 py-2 text-left" {...props} />
   ),
   td: (props: any) => (
-    <td
-      className="border border-gray-300 px-3 py-2"
-      {...props}
-    />
+    <td className="border border-gray-300 px-3 py-2" {...props} />
   ),
 
-  // Keep your custom programmatic table too
+  // Keep custom programmatic <Table data={...} />
   Table,
 }
-
 
 export function CustomMDX(props: any) {
   return (
     <MDXRemote
       {...props}
       components={{ ...components, ...(props.components || {}) }}
-     />
+    />
   )
 }
