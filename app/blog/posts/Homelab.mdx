@@ -102,7 +102,7 @@ The target? To have my setup consistently running at **2.5 Gbps**.
    - Delivers \~2.5× faster speeds with no infrastructure changes.
 
 2. **Wi-Fi 6/6E Backhaul**
-   - Modern access points push beyond `1` Gbps.
+   - Modern access points push beyond 1 Gbps.
    - 2.5G uplink is the affordable, practical middle ground.
 
 3. **Lower Power & Heat**
@@ -118,7 +118,7 @@ The target? To have my setup consistently running at **2.5 Gbps**.
    - Perfect for SSDs, NAS, and 2 Gbps fiber plans.
    - Few home users need more unless doing enterprise work.
 
-✅ **In short:** 2.5 Gbps is the practical bridge between legacy `1` Gbps and high-end 10 Gbps — affordable, plug-and-play, and more than enough for most homelabs.
+✅ **In short:** 2.5 Gbps is the practical bridge between legacy 1 Gbps and high-end 10 Gbps — affordable, plug-and-play, and more than enough for most homelabs.
 
 ---
 
@@ -135,7 +135,7 @@ That brings me to **\$705 in** so far… and still nothing is actually usable ye
 
 ### Day 6 – \$750
 
-I bought some HDMI and Thunderbolt cables, which are always a good investment, and did some research. Well, something I have always wanted is more storage, not counting them into the total cost, I have 4 `1` TB Seagate drives lying around.
+I bought some HDMI and Thunderbolt cables, which are always a good investment, and did some research. Well, something I have always wanted is more storage, not counting them into the total cost, I have 4 1 TB Seagate drives lying around.
 That's when it hit me: I should start with a file server—something lightweight, affordable, and excellent for serving files. Having a server is not it, and neither is a desktop/workstation. And am I really that geeked out to run a Rpi server?
 Also, I don't have enough spare phones to run this, so I'll have to look into finding a mini-PC for this task. Well there's this brand that I have always liked it's motto that seemed perfect for this job. A small intel pc, with 2gb ports, hdmi and 4 usb would be what I am looking for.
 
@@ -250,7 +250,7 @@ Some to give you guys some context here is what raiding means in "My World"
 ### RAID 1 – **Mirroring**
 
 - **How it works:** Each drive has an exact copy (2 drives minimum).
-- **Pros:** High redundancy (safe if `1` drive fails), simple to set up.
+- **Pros:** High redundancy (safe if 1 drive fails), simple to set up.
 - **Cons:** Storage efficiency = 50% (2× 2TB = only 2TB usable).
 - **Use case:** Important small-scale systems (boot drives, business PCs, critical docs).
 
@@ -258,7 +258,7 @@ Some to give you guys some context here is what raiding means in "My World"
 
 ### RAID 5 – **Striping + Parity**
 
-- **How it works:** Spreads data across 3+ drives with `1` drive worth of parity.
+- **How it works:** Spreads data across 3+ drives with 1 drive worth of parity.
 - **Pros:** Redundancy with good storage efficiency (\~67–80%), decent read speed.
 - **Cons:** Write speed slower (parity calc), rebuilds can stress drives. If 2 drives fail = data loss.
 - **Use case:** Home/SMB NAS where capacity + redundancy are both important.
@@ -823,7 +823,7 @@ When you put multiple drives together, you need both a **storage strategy** (RAI
   - Compression and deduplication.
 
 ✅ **Good for:** Data integrity, enterprise NAS, archival.
-⚠️ **Limitations:** High RAM requirement (rule of thumb: `1` GB RAM per `1` TB storage).
+⚠️ **Limitations:** High RAM requirement (rule of thumb: 1 GB RAM per 1 TB storage).
 
 **Why people love ZFS:** If you write a file, ZFS can verify later that it hasn’t silently corrupted — something RAID + ext4/NTFS can’t guarantee.
 
@@ -893,7 +893,7 @@ Down the road, I see myself moving to **ZFS** when I add bigger disks (like the 
 - **Snapshots & cloning:** Perfect for testing, backups, or rolling back a bad config.
 - **RAID-Z:** Safer rebuilds compared to mdadm RAID 5/6.
 
-⚠️ Trade-off: ZFS eats RAM (rule of thumb: `1` GB RAM per `1` TB of storage). My N100 can’t handle it gracefully, so I’d need to run ZFS on a beefier box (like my Evo X1 or a future node).
+⚠️ Trade-off: ZFS eats RAM (rule of thumb: 1 GB RAM per 1 TB of storage). My N100 can’t handle it gracefully, so I’d need to run ZFS on a beefier box (like my Evo X1 or a future node).
 
 ---
 
