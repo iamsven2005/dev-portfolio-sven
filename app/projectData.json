@@ -52,6 +52,12 @@
 
     ],
     "school": [
+         {
+            "title": "Voting App",
+            "description": "A realtime voting app that served hundreds of students in realtime for a school event.",
+            "github": "https://github.com/iamsven2005/student-polling",
+            "website": "http://vote.bihance.app/"
+          },
         {
             "title": "NYPTECH",
             "description": "Incubation hub for NYP",
@@ -111,6 +117,20 @@
         "github": "https://github.com/iamsven2005/twitchclone",
         "video": "https://youtu.be/XeWJXU6jcCY",
         "website": "http://twitchclone-five.vercel.app/"
+      },
+      {
+        "title": "BLOCKBOX",
+        "description": "A copy of minecraft in the browser made with ThreeJs and supabase",
+        "github": "https://github.com/iamsven2005/3d-build",
+        "video": "https://www.instagram.com/p/DON7WQuk0fG/",
+        "website": "https://v0-supabase-3-d-game.vercel.app/"
+      },
+      {
+        "title": "BLOCKBOX",
+        "description": "A copy of minecraft in the browser made with ThreeJs and supabase",
+        "github": "https://github.com/iamsven2005/3d-build",
+        "video": "https://www.instagram.com/p/DON7WQuk0fG/",
+        "website": "blockbox.bihance.app"
       },
       {
         "title": "SSnake",
@@ -176,6 +196,32 @@
         "github": "https://github.com/iamsven2005/c-timer"
       },
       {
+        "title": "10kb Projects",
+        "description": "My projects to practice file compression https://www.linkedin.com/posts/tan-sven-496988237_tan-sven-on-instagram-simple-editor-this-activity-7363467809533673472-GiC8",
+        "links": [
+          {
+            "name": "Simple Realtime Todo list app:",
+            "url": "https://todo.bihance.app"
+          },
+          {
+            "name": "Basic e-commerce store:",
+            "url": "https://ecom.bihance.app/"
+          },
+          {
+            "name": "Chat gpt clone",
+            "url": "https://ai.bihance.app/"
+          },
+          {
+            "name": "Google Drive Clone",
+            "url": "https://drive.bihance.app/"
+          },
+          {
+            "name": "Google Slides Clone",
+            "url": "https://www.instagram.com/p/DNhshoezJTQ/"
+          }
+        ]
+      }
+      {
         "title": "Rust Projects",
         "description": "My projects to practice rust",
         "links": [
@@ -234,8 +280,15 @@
         "title": "LKYGBP",
         "description": "An AI based e-learning platform",
         "github": "https://github.com/iamsven2005/new",
-        "website": "https://new-flame-five.vercel.app/"
-      }
+        "website": "https://new-flame-five.vercel.app/new"
+      },
+    {
+        "title": "SUTD what the hack",
+        "description": "Nividia Jeston based cross platform system that tracks and improves your sleep, built on Bambu X1. https://devpost.com/software/slknow",
+        "github": "https://github.com/iamsven2005/slknow",
+        "website": "https://slknow.vercel.app/"
+    }
+        
     ]
   }
   
