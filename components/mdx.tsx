@@ -96,6 +96,23 @@ let components = {
   Image: RoundedImage,
   a: CustomLink,
   code: Code,
+
+  // Allow markdown tables
+  table: (props: any) => (
+    <table className="border-collapse border border-gray-300 w-full my-4 text-sm" {...props} />
+  ),
+  thead: (props: any) => (
+    <thead className="bg-gray-100 font-semibold" {...props} />
+  ),
+  th: (props: any) => (
+    <th className="border border-gray-300 px-3 py-2 text-left" {...props} />
+  ),
+  td: (props: any) => (
+    <td className="border border-gray-300 px-3 py-2" {...props} />
+  ),
+  tr: (props: any) => <tr className="even:bg-gray-50" {...props} />,
+
+  // Keep your custom one if you still want programmatic tables
   Table,
 }
 
