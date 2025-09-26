@@ -136,8 +136,8 @@ They entered the consumer electronics market with a clear focus: crafting compac
 
 While Trigkey doesn’t prominently use a stylized tagline like some brands, their guiding principle is clearly stated as:
 
-> **"Exploring technology, green life"** (sometimes rendered as _“discovery technology green life”_)
-> This captures their mission to integrate the latest tech into daily life while delivering energy-efficient, high-performance mini PCs.
+**"Exploring technology, green life"** (sometimes rendered as _“discovery technology green life”_)
+This captures their mission to integrate the latest tech into daily life while delivering energy-efficient, high-performance mini PCs.
 
 ### Vision & Approach
 
@@ -450,7 +450,7 @@ I picked up **18 TB** at **\~S\$24/TB** — and here’s why that capacity makes
 - **Compute:** Trigkey N100 NAS (quiet, \~6–20 W), later pairing with beefier nodes (Evo X1) for heavier tasks.
 - **Disks:** Moving from a learning RAID10 to **IronWolf Pro** as I consolidate and scale.
 - **Network:** Targeting **2.5 GbE** as the practical sweet spot—works on existing cabling, cheap NICs/switches, fast enough for SSD-backed shares.
-- **Power:** Lining up an **Eaton UPS** so rebuilds and writes survive brownouts (clean shutdowns > corrupted arrays).
+- **Power:** Lining up an **Eaton UPS** so rebuilds and writes survive brownouts (From clean shutdowns to corrupted arrays).
 
 If you’re building similar: pick **CMR** for NAS, lean into **IronWolf Pro** for the NAS-specific perks and recovery safety net, and don’t sleep on **18 TB** while the price curve is friendly. Your future self (and your rebuild times) will thank you.
 
@@ -850,7 +850,7 @@ AI workloads thrive on **predictability** — the ability to stream datasets in 
 
 - Provide **stable I/O throughput**, reducing training/inference hiccups.
 - Save energy, which matters when GPUs are already consuming most of the power budget.
-- Fit well in **edge-AI setups** or small servers where efficiency > chasing PCIe 5.0 bragging rights.
+- Fit well in **edge-AI setups** or small servers where efficiency matters.
 
 ## Day 12 – \$2,980—Evo X1 Joins the Homelab
 
@@ -1212,7 +1212,7 @@ Together with fast NVMe storage and smarter software frameworks, Blackwell will 
 
 👉 **Bottom line:** For LLMs, VRAM size is the gating factor. If a model doesn’t fit in VRAM, performance collapses due to SSD/RAM offloading. The 5070 Ti’s extra 4 GB VRAM often unlocks whole model tiers (like 13B quantized) without slowdowns.
 
-## 2. Why VRAM > Bus Size (for value in AI)
+## 2. Why VRAM matters more Bus Size (for value in AI)
 
 - **VRAM determines capacity**, i.e., _what models you can run at all_.
   - 7B → fits in both 12 GB and 16 GB.
@@ -1326,7 +1326,7 @@ At \~\$130 for the 8GB model, it’s accessible enough to buy multiple units and
 | **CPU**             | Quad-core ARM Cortex-A76, 2.4GHz                                     | Dual-core Xtensa LX6, \~240MHz              | 6-core Carmel ARMv8.2, 1.9GHz                  | Intel Core m3 / Celeron                          |
 | **RAM**             | 8GB LPDDR4X                                                          | \~520KB SRAM                                | 8–16GB LPDDR4                                  | 8GB DDR4                                         |
 | **GPU / AI Accel.** | VideoCore VII GPU, supports Coral TPU / Intel NCS2                   | None (basic I/O MCU)                        | 384-core Volta GPU + 48 Tensor Cores           | Intel UHD GPU, supports external AI accelerators |
-| **Power Draw**      | \~10–15W under load                                                  | <1W                                         | 10–15W idle, up to 30W+                        | 6–15W depending on model                         |
+| **Power Draw**      | \~10–15W under load                                                  | less than 1W                                | 10–15W idle, up to 30W+                        | 6–15W depending on model                         |
 | **OS / Ecosystem**  | Full Linux distros (Raspberry Pi OS, Ubuntu, Arch, etc.)             | Arduino / ESP-IDF SDK                       | NVIDIA JetPack (Ubuntu-based)                  | Windows 10, Linux                                |
 | **Ease of Use**     | ⭐⭐⭐⭐☆ (plug-and-play, huge community)                            | ⭐⭐☆☆☆ (low-level coding, steep curve)     | ⭐⭐⭐☆☆ (powerful but complex)                | ⭐⭐⭐☆☆ (PC-like, Windows support)              |
 | **AI Suitability**  | Great for edge inference with accelerators (e.g., Coral TPU, TFLite) | Very limited (good for sensors/IoT, not AI) | Excellent for heavy AI models (CV, robotics)   | Decent for ML frameworks, but higher cost        |
