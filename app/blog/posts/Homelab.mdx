@@ -40,7 +40,7 @@ Dad bought a **Legion 5** for design. Lucky for me, I could finally game. Steam 
 
 ![Head](https://dev-portfolio-sven.vercel.app/head.jpeg)
 
-### Day '1' – \$0.50
+### Day `1` – \$0.50
 
 Before jumping into another device, I had to ask myself: _what’s the real purpose of this remote setup?_
 
@@ -247,7 +247,7 @@ Some to give you guys some context here is what raiding means in "My World"
 
 ---
 
-### RAID `1` – **Mirroring**
+### RAID 1 – **Mirroring**
 
 - **How it works:** Each drive has an exact copy (2 drives minimum).
 - **Pros:** High redundancy (safe if `1` drive fails), simple to set up.
@@ -337,11 +337,11 @@ Some to give you guys some context here is what raiding means in "My World"
 
 | System      | Expandable | Performance         | Fault Tolerance   | Best For                |
 | ----------- | ---------- | ------------------- | ----------------- | ----------------------- |
-| RAID 0      | No         | 🚀🚀🚀              | ❌ None           | Speed only              |
-| RAID `1`      | No         | 🚀🚀                | ✅ `1` drive fail   | Small but critical      |
-| RAID 5      | No         | 🚀🚀                | ✅ `1` drive fail   | Balanced home NAS       |
+| RAID 0      | No         | 🚀🚀🚀             | ❌ None          | Speed only              |
+| RAID 1      | No         | 🚀🚀               | ✅ 1drive fail  |    Small but critical      |
+| RAID 5      | No         | 🚀🚀                | ✅ 1 drive fail   | Balanced home NAS       |
 | RAID 6      | No         | 🚀                  | ✅ 2 drives fail  | Large arrays            |
-| RAID 10     | No         | 🚀🚀🚀              | ✅ `1` per mirror   | Fast + safe, but costly |
+| RAID 10     | No         | 🚀🚀🚀              | ✅ 1 per mirror   | Fast + safe, but costly |
 | Unraid      | ✅ Yes     | 🚀 (with SSD cache) | ✅ 1–2 drive fail | Flexible mixed disks    |
 | ZFS/TrueNAS | Limited    | 🚀🚀                | ✅ up to 3 drives | Enterprise-grade        |
 
@@ -355,7 +355,7 @@ Some to give you guys some context here is what raiding means in "My World"
 
 I mnted seagate to /mnt, set fstab as service
 I then forgot about it and added 5 more disks, tried a raid 10, of course, it wouldn't work.
-I thought the tailscale issue, so I went to `0` superblock. The UUID of the disk surely changes.
+I thought the tailscale issue, so I went to "0 superblock". The UUID of the disk surely changes.
 I then proceeded to make NTFS of it, and it confirmed fail, but Idk why (conflict proc), then I tried sudo reboot cause of tailscale.
 fstab confirm crash the whole pc. Now remember by tailscale routes through nas a dhcp, so whole lan kenna crash.
 Now I panic because no lan, no outbound. Then I understood why. Wasted whole day but using raid 5 now waiting for 9.9 sales. Shifted homelab from living room because I have singtel wifi for a reason.
@@ -721,7 +721,7 @@ When data sits on disk, it isn’t just “raw bits” — it’s organized by a
 
 - **ext4 (default for modern Linux):**
   - Journaling, extents (faster for large files).
-  - Supports **files up to 16 TB** and **volumes up to `1` EB**.
+  - Supports **files up to 16 TB** and **volumes up to 1 EB**.
   - Stable, reliable, good performance.
 
 - **Best use:** Linux desktops, servers, NAS.
