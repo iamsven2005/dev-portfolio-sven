@@ -40,7 +40,7 @@ Dad bought a **Legion 5** for design. Lucky for me, I could finally game. Steam 
 
 ![Head](https://dev-portfolio-sven.vercel.app/head.jpeg)
 
-### Day 1 – \$0.50
+### Day '1' – \$0.50
 
 Before jumping into another device, I had to ask myself: _what’s the real purpose of this remote setup?_
 
@@ -97,28 +97,28 @@ The target? To have my setup consistently running at **2.5 Gbps**.
 
 # ⚡ Why 2.5 Gbps Became the Sweet Spot
 
-- 1. **Backwards Compatibility with Cat5e**
+1. **Backwards Compatibility with Cat5e**
    - Works with old wiring without re-cabling.
    - Delivers \~2.5× faster speeds with no infrastructure changes.
 
-- 2. **Wi-Fi 6/6E Backhaul**
-   - Modern access points push beyond 1 Gbps.
+2. **Wi-Fi 6/6E Backhaul**
+   - Modern access points push beyond `1` Gbps.
    - 2.5G uplink is the affordable, practical middle ground.
 
-- 3. **Lower Power & Heat**
+3. **Lower Power & Heat**
    - Easier to cool, better for silent consumer gear and homelabs.
 
-- 4. **Cost Efficiency**
+4. **Cost Efficiency**
    - Much cheaper than 5G/10G hardware, but a big jump over 1G.
 
-- 5. **Industry Adoption**
+5. **Industry Adoption**
    - Pushed by the NBASE-T Alliance; widely compatible today.
 
-- 6. **Practical Speeds**
+6. **Practical Speeds**
    - Perfect for SSDs, NAS, and 2 Gbps fiber plans.
    - Few home users need more unless doing enterprise work.
 
-✅ **In short:** 2.5 Gbps is the practical bridge between legacy 1 Gbps and high-end 10 Gbps — affordable, plug-and-play, and more than enough for most homelabs.
+✅ **In short:** 2.5 Gbps is the practical bridge between legacy `1` Gbps and high-end 10 Gbps — affordable, plug-and-play, and more than enough for most homelabs.
 
 ---
 
@@ -135,7 +135,7 @@ That brings me to **\$705 in** so far… and still nothing is actually usable ye
 
 ### Day 6 – \$750
 
-I bought some HDMI and Thunderbolt cables, which are always a good investment, and did some research. Well, something I have always wanted is more storage, not counting them into the total cost, I have 4 1 TB Seagate drives lying around.
+I bought some HDMI and Thunderbolt cables, which are always a good investment, and did some research. Well, something I have always wanted is more storage, not counting them into the total cost, I have 4 `1` TB Seagate drives lying around.
 That's when it hit me: I should start with a file server—something lightweight, affordable, and excellent for serving files. Having a server is not it, and neither is a desktop/workstation. And am I really that geeked out to run a Rpi server?
 Also, I don't have enough spare phones to run this, so I'll have to look into finding a mini-PC for this task. Well there's this brand that I have always liked it's motto that seemed perfect for this job. A small intel pc, with 2gb ports, hdmi and 4 usb would be what I am looking for.
 
@@ -208,12 +208,12 @@ This gives me two mount points:
 
 #### 🛠️ Setup Journey
 
-- 1. Installed **Ubuntu Server** over ethernet, then moved it to WiFi to keep it as an **isolated island**.
-- 2. Connected it back via **Tailscale** as an edge node.
-- 3. Deployed **AdGuard** to run DHCP and route Tailscale traffic through it.
-- 4. Installed **Active Directory** and enabled an **SMB share** on the 500GB disk for multi-device access.
-- 5. Added **Filebrowser**, mapped to the RAID 10 array, with a daemon to survive reboots, proxied via ngrok.
-- 6. Installed **Cockpit** for quick phone-based monitoring.
+1. Installed **Ubuntu Server** over ethernet, then moved it to WiFi to keep it as an **isolated island**.
+2. Connected it back via **Tailscale** as an edge node.
+3. Deployed **AdGuard** to run DHCP and route Tailscale traffic through it.
+4. Installed **Active Directory** and enabled an **SMB share** on the 500GB disk for multi-device access.
+5. Added **Filebrowser**, mapped to the RAID 10 array, with a daemon to survive reboots, proxied via ngrok.
+6. Installed **Cockpit** for quick phone-based monitoring.
 
 ---
 
@@ -247,10 +247,10 @@ Some to give you guys some context here is what raiding means in "My World"
 
 ---
 
-### RAID 1 – **Mirroring**
+### RAID `1` – **Mirroring**
 
 - **How it works:** Each drive has an exact copy (2 drives minimum).
-- **Pros:** High redundancy (safe if 1 drive fails), simple to set up.
+- **Pros:** High redundancy (safe if `1` drive fails), simple to set up.
 - **Cons:** Storage efficiency = 50% (2× 2TB = only 2TB usable).
 - **Use case:** Important small-scale systems (boot drives, business PCs, critical docs).
 
@@ -258,7 +258,7 @@ Some to give you guys some context here is what raiding means in "My World"
 
 ### RAID 5 – **Striping + Parity**
 
-- **How it works:** Spreads data across 3+ drives with 1 drive worth of parity.
+- **How it works:** Spreads data across 3+ drives with `1` drive worth of parity.
 - **Pros:** Redundancy with good storage efficiency (\~67–80%), decent read speed.
 - **Cons:** Write speed slower (parity calc), rebuilds can stress drives. If 2 drives fail = data loss.
 - **Use case:** Home/SMB NAS where capacity + redundancy are both important.
@@ -276,7 +276,7 @@ Some to give you guys some context here is what raiding means in "My World"
 
 ### RAID 10 – **Striping + Mirroring**
 
-- **How it works:** Combines RAID 1 and `0` (4+ drives).
+- **How it works:** Combines RAID `1` and `0` (4+ drives).
 - **Pros:** Fast + redundant, quick rebuilds.
 - **Cons:** 50% efficiency, needs more drives.
 - **Use case:** High-performance setups where uptime + speed both matter (databases, VMs).
@@ -338,10 +338,10 @@ Some to give you guys some context here is what raiding means in "My World"
 | System      | Expandable | Performance         | Fault Tolerance   | Best For                |
 | ----------- | ---------- | ------------------- | ----------------- | ----------------------- |
 | RAID 0      | No         | 🚀🚀🚀              | ❌ None           | Speed only              |
-| RAID 1      | No         | 🚀🚀                | ✅ 1 drive fail   | Small but critical      |
-| RAID 5      | No         | 🚀🚀                | ✅ 1 drive fail   | Balanced home NAS       |
+| RAID `1`      | No         | 🚀🚀                | ✅ `1` drive fail   | Small but critical      |
+| RAID 5      | No         | 🚀🚀                | ✅ `1` drive fail   | Balanced home NAS       |
 | RAID 6      | No         | 🚀                  | ✅ 2 drives fail  | Large arrays            |
-| RAID 10     | No         | 🚀🚀🚀              | ✅ 1 per mirror   | Fast + safe, but costly |
+| RAID 10     | No         | 🚀🚀🚀              | ✅ `1` per mirror   | Fast + safe, but costly |
 | Unraid      | ✅ Yes     | 🚀 (with SSD cache) | ✅ 1–2 drive fail | Flexible mixed disks    |
 | ZFS/TrueNAS | Limited    | 🚀🚀                | ✅ up to 3 drives | Enterprise-grade        |
 
@@ -509,10 +509,10 @@ Bottom line: Seagate’s **IronWolf Pro** gives me predictable CMR performance, 
 
 I picked up **18 TB** at **\~S\$24/TB** — and here’s why that capacity makes sense:
 
-- 1. **Best value curve right now:** Below 16 TB, \$/TB is usually worse; above 18–20 TB, you start paying early-adopter tax.
-- 2. **CMR + sanity:** Many 18 TB SKUs are CMR, so I get NAS-friendly behaviour without stepping into newer HAMR pricing.
-- 3. **Rebuild risk vs time:** Bigger drives mean longer rebuilds (and higher second-failure risk). **18 TB is still manageable** compared to 20–22 TB, especially on modest CPUs like my N100.
-- 4. **Planning headroom:** With 18 TB units, even a small 3-bay gives real, future-proof capacity (and I can still move to ZFS RAIDZ2 later if I expand).
+1. **Best value curve right now:** Below 16 TB, \$/TB is usually worse; above 18–20 TB, you start paying early-adopter tax.
+2. **CMR + sanity:** Many 18 TB SKUs are CMR, so I get NAS-friendly behaviour without stepping into newer HAMR pricing.
+3. **Rebuild risk vs time:** Bigger drives mean longer rebuilds (and higher second-failure risk). **18 TB is still manageable** compared to 20–22 TB, especially on modest CPUs like my N100.
+4. **Planning headroom:** With 18 TB units, even a small 3-bay gives real, future-proof capacity (and I can still move to ZFS RAIDZ2 later if I expand).
 
 ## My setup story (the short version)
 
@@ -721,7 +721,7 @@ When data sits on disk, it isn’t just “raw bits” — it’s organized by a
 
 - **ext4 (default for modern Linux):**
   - Journaling, extents (faster for large files).
-  - Supports **files up to 16 TB** and **volumes up to 1 EB**.
+  - Supports **files up to 16 TB** and **volumes up to `1` EB**.
   - Stable, reliable, good performance.
 
 - **Best use:** Linux desktops, servers, NAS.
@@ -766,7 +766,7 @@ When data sits on disk, it isn’t just “raw bits” — it’s organized by a
   - RAID-Z support built-in.
 
 - **Cons:**
-  - High memory usage (rule of thumb: 1 GB RAM per 1 TB storage).
+  - High memory usage (rule of thumb: `1` GB RAM per `1` TB storage).
   - Complex.
 
 - **Best use:** NAS, mission-critical servers, archival.
@@ -823,7 +823,7 @@ When you put multiple drives together, you need both a **storage strategy** (RAI
   - Compression and deduplication.
 
 ✅ **Good for:** Data integrity, enterprise NAS, archival.
-⚠️ **Limitations:** High RAM requirement (rule of thumb: 1 GB RAM per 1 TB storage).
+⚠️ **Limitations:** High RAM requirement (rule of thumb: `1` GB RAM per `1` TB storage).
 
 **Why people love ZFS:** If you write a file, ZFS can verify later that it hasn’t silently corrupted — something RAID + ext4/NTFS can’t guarantee.
 
@@ -893,7 +893,7 @@ Down the road, I see myself moving to **ZFS** when I add bigger disks (like the 
 - **Snapshots & cloning:** Perfect for testing, backups, or rolling back a bad config.
 - **RAID-Z:** Safer rebuilds compared to mdadm RAID 5/6.
 
-⚠️ Trade-off: ZFS eats RAM (rule of thumb: 1 GB RAM per 1 TB of storage). My N100 can’t handle it gracefully, so I’d need to run ZFS on a beefier box (like my Evo X1 or a future node).
+⚠️ Trade-off: ZFS eats RAM (rule of thumb: `1` GB RAM per `1` TB of storage). My N100 can’t handle it gracefully, so I’d need to run ZFS on a beefier box (like my Evo X1 or a future node).
 
 ---
 
@@ -1042,7 +1042,7 @@ Basically, it’s like moving from a reliable but modest car (my N100) into a sl
 | **Price Paid**   | \$1,020                                                   |
 | **CPU**          | AMD Ryzen AI 9 HX 370 (12c/24t)                           |
 | **RAM**          | 64 GB LPDDR5X                                             |
-| **Storage**      | 1 TB PCIe 4.0 NVMe + dual M.2 expandability               |
+| **Storage**      | `1` TB PCIe 4.0 NVMe + dual M.2 expandability             |
 | **Connectivity** | 2.5 GbE ×2, Wi-Fi 6, USB4, Oculink, HDMI, DP              |
 | **Modes**        | Quiet (35 W) / Balanced (54 W) / Performance (65 W)       |
 | **Why Bought**   | Excellent price-to-performance value, AI-capable, compact |
@@ -1066,17 +1066,17 @@ When it comes to **AI workloads**, not all GPUs are created equal. Yes, there ar
 
 Here’s why:
 
-- 1. **CUDA Ecosystem & Libraries**
+1. **CUDA Ecosystem & Libraries**
    - CUDA (Compute Unified Device Architecture) is more than hardware—it’s a mature **software stack**.
    - Frameworks like **TensorFlow, PyTorch, MXNet** have deep CUDA support.
    - NVIDIA’s **cuDNN**, **TensorRT**, and **RAPIDS** provide ready-to-use optimizations. Competitors simply can’t match the breadth of libraries and community support.
 
-- 2. **Developer Community & Stability**
+2. **Developer Community & Stability**
    - Tens of thousands of tutorials, GitHub repos, and Stack Overflow threads exist for CUDA.
    - AMD’s ROCm is improving, but driver stability and ecosystem maturity remain weak points.
    - Cambricon is niche (mainly in Chinese data centers), and Intel GPUs are still finding their place.
 
-- 3. **Hardware Features**
+3. **Hardware Features**
    - CUDA GPUs integrate **Tensor Cores** (for AI matrix math), **RT Cores** (for rendering), and highly optimized memory pipelines.
    - NVIDIA has long experience in balancing **FP32, FP16, INT8, and now FP8 precision**, making training and inference faster and more power-efficient.
 
@@ -1141,20 +1141,20 @@ In short: **Thunderbolt is great for plug-and-play universality**, but **Oculink
 
 There are several ways to connect Oculink to a desktop GPU:
 
-- 1. **Oculink-to-PCIe Riser Board (Budget Option)**
+1. **Oculink-to-PCIe Riser Board (Budget Option)**
    - Cable plugs into riser/dock → PCIe x16 slot.
    - Needs 24-pin ATX + GPU PCIe power.
    - Most flexible, cheapest.
 
-- 2. **Oculink-to-M.2 Adapter**
+2. **Oculink-to-M.2 Adapter**
    - Converts an NVMe slot into Oculink.
    - Great for laptops and mini-PCs.
 
-- 3. **Thunderbolt-to-Oculink Hybrids**
+3. **Thunderbolt-to-Oculink Hybrids**
    - Convert Thunderbolt into Oculink.
    - Useful if your host only supports Thunderbolt, but pricier.
 
-- 4. **Direct Oculink GPU Boxes**
+4. **Direct Oculink GPU Boxes**
    - Purpose-built GPU enclosures.
    - Sleek but often expensive.
 
@@ -1309,15 +1309,15 @@ A clean wiring job doesn’t just make you proud when you peek inside — it dir
 
 With multiple drives, heat builds fast. Here’s how to optimize:
 
-- 1. **Stacking HDDs**
+1. **Stacking HDDs**
    - Always leave a small gap if possible.
    - Position a low-RPM 120mm/140mm fan to blow directly across them.
 
-- 2. **NVMe SSDs**
+2. **NVMe SSDs**
    - Use heatsinks or thermal pads if they’re bare.
    - Avoid cramming multiple drives under a single heatsink without airflow.
 
-- 3. **External GPU/Drive setups via Oculink**
+3. **External GPU/Drive setups via Oculink**
    - Oculink docks add flexibility, but don’t forget they still need cooling.
    - Keep GPU/drive risers in open airflow paths, not buried in cable jungles.
 
