@@ -48,8 +48,17 @@
         "title": "Convohearts",
         "description": "Dating Platform made with Dart and flutter",
         "website": "https://convohearts.sg"
+      },
+      {
+        "title": "YWL Engineering Group",
+        "description": "Internal devops tooling, work portal management, sysadminination and tech support.",
+        "website": "https://wci.ywlgroup.com/login"
+      },
+      {
+        "title": "Supcareer",
+        "description": "More than just a tool, 'Sup is a full-stack personalised career copilot. Land your dream job faster.",
+        "website": "https://www.supcareer.app/"
       }
-
     ],
     "school": [
          {
