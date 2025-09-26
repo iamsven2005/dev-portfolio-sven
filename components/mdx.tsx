@@ -97,24 +97,34 @@ let components = {
   a: CustomLink,
   code: Code,
 
-  // Allow markdown tables
+  // Override MDX default table elements
   table: (props: any) => (
-    <table className="border-collapse border border-gray-300 w-full my-4 text-sm" {...props} />
+    <table
+      className="border-collapse border border-gray-300 w-full text-sm my-4"
+      {...props}
+    />
   ),
   thead: (props: any) => (
     <thead className="bg-gray-100 font-semibold" {...props} />
   ),
+  tr: (props: any) => <tr className="even:bg-gray-50" {...props} />,
   th: (props: any) => (
-    <th className="border border-gray-300 px-3 py-2 text-left" {...props} />
+    <th
+      className="border border-gray-300 px-3 py-2 text-left"
+      {...props}
+    />
   ),
   td: (props: any) => (
-    <td className="border border-gray-300 px-3 py-2" {...props} />
+    <td
+      className="border border-gray-300 px-3 py-2"
+      {...props}
+    />
   ),
-  tr: (props: any) => <tr className="even:bg-gray-50" {...props} />,
 
-  // Keep your custom one if you still want programmatic tables
+  // Keep your custom programmatic table too
   Table,
 }
+
 
 export function CustomMDX(props: any) {
   return (
