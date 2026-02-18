@@ -230,6 +230,28 @@
           }
         ]
       },
+        {
+        "title": "SIT Projects",
+        "description": "My projects in SIT",
+        "links": [
+          {
+            "name": "Sentiment analysis on food",
+            "url": "https://n100.tailfb55ce.ts.net/inf/"
+          },
+          {
+            "name": "Gen AI assignment",
+            "url": "https://n100.tailfb55ce.ts.net/gai/"
+          },
+          {
+            "name": "PHP escape room",
+            "url": "http://inf1005.bihance.app/"
+          },
+          {
+            "name": "Network Assignment",
+            "url": "hhttps://iamsven2005.github.io/network-proj/"
+          },
+        ]
+      },
       {
         "title": "Rust Projects",
         "description": "My projects to practice rust",
