@@ -91,7 +91,7 @@ export default function Portfolio() {
               
               <div className="flex items-center justify-center">
                 <Image
-                  src="/image.png"
+                  src="/image.jpeg"
                   width={256}
                   height={346}
                   alt="About Me"
